@@ -44,19 +44,25 @@
   </style>
 </head>
 <body>
-  <div data-role="page" id="pageone">
-    <div data-role="header" class="header">
-      <h1>欢迎访问我的主页</h1>
+  <div data-role="page" id="pageone" >
+    <div data-role="header" class="header" data-position="fixed" data-tap-toggle="false">
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#" >热映</a></li>
+          <li><a href="#" >影院</a></li>
+          <li><a href="#" >待映</a></li>
+        </ul>
+      </div>
     </div>
   
     <div data-role="main" class="ui-content">
       <p>我的内容..</p>
     </div>
   
-    <div data-role="footer" class="footer">
+    <div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
       <div data-role="navbar">
         <ul>
-          <li><a href="#">
+          <li><a href="#pageone" >
             <img src="../img/首页.png" alt="">
             <span class="title">首页</span>
           </a></li>
