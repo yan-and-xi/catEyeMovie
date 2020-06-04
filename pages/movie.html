@@ -15,14 +15,70 @@
       padding: 0;
       margin: 0;
     }
+    ul,li{
+      list-style: none;
+    }
     #pageone{
       height: 100%;
     }
-    .header{
-      height: 9%;
+    .box-office{
+      width: 320px;
+      background-color: #f6f6f6;
+      padding: 5px;
     }
-    .ui-content{
-      height: 80%;
+    .movie-list{
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .movie-item{
+      width: 320px;
+    }
+    .item-img{
+      position: relative;
+      width: 20%;
+      float: left;
+      margin: 13px 0 auto;
+      border-radius: 2px;
+    }
+    .item-img img{
+      border-radius: 2px;
+    }
+    .item-img .icon{
+      position: absolute;
+      left: 36%;
+      top: 30%;
+    }
+    .item-content{
+      float: right;
+      width: 75%;
+      border-bottom: 1px solid #e3e3e3;
+      font-size: 12px;
+      padding-bottom: 5px;
+      margin-top: 4px;
+    }
+    .item-content p{
+      color: #676767;
+    }
+    .item-play{
+      float: right;
+      background-color: #f09f60;
+      border-radius: 20px;
+      width: 58px;
+      padding: 6px 0;
+      margin: -70px 5px -70px 0;
+      font-weight: 300;
+      color: #fff;
+      position: relative;
+    }
+    .item-play svg{
+      position: absolute;
+      left: 13%;
+      top: 24%;
+    }
+    .item-play span{
+      display: inline-block;
+      margin-left: 25px;
+      margin-bottom: 2px;
     }
     .footer{
       height: 10%;
@@ -42,32 +98,273 @@
   </style>
 </head>
 <body>
+  <!-- 热映 -->
   <div data-role="page" id="pageone" >
-    <div data-role="header" class="header" data-position="fixed" data-tap-toggle="false">
-      <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-          <ul class="nav navbar-nav" >
-            <li class="dropdown" >
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">杭州 <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">上海</a></li>
-                <li><a href="#">北京</a></li>
-                <li><a href="#">杭州</a></li>
-                <li><a href="#">深圳</a></li>
-                <li><a href="#">江西</a></li>
-              </ul>
-            </li>
-            <li ><a href="#">热映</a></li>
-            <li ><a href="#">影院</a></li>
-            <li ><a href="#">待映</a></li>
-            <li class="find"><a href="#"><img src="../img/查询.png" alt="" width="24"></a></li>
-          </ul>
-        </div>
-      </nav>
+    <div data-role="header" class="header" data-position="fixed" data-tap-toggle="false" style="height: 37px;">  
+      <div data-role="navbar">
+        <ul >
+          <li style="height: 37.5px;">
+            <a href="#">杭州 <span class="caret"></span></a>
+          </li>
+          <li ><a href="#pageone">热映</a></li>
+          <li ><a href="#pagetwo">影院</a></li>
+          <li ><a href="#pagethree">待映</a></li>
+          <li >
+            <a href=""><img src="../img/查询灰.png" alt=""></a>
+          </li>
+        </ul>
+      </div>
     </div>
   
     <div data-role="main" class="ui-content">
-      <p>我的内容..</p>
+      <div>
+        <div class="box-office">
+          <img src="../img/统计图.png" alt="">
+          <span>实时票房</span>
+          <span style="float: right;">今日大盘<span style="color: red;">0.0万</span>
+          <span style="display:inline-block;border-top:1px solid #ccc;border-right: 1px solid #ccc;width: 8px;height: 8px;transform:rotate(45deg)"></span>
+          </span>
+        </div>
+        <div class="movie-list">
+          <ul class="movie-list " >
+            <li class="movie-item">
+              <div class="item-img">
+                <svg t="1591237178772" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4462" width="28" height="28"><path d="M507.456 64C262.528 64 64 262.752 64 507.904c0 245.12 198.528 443.872 443.456 443.872 244.896 0 443.456-198.752 443.456-443.872C950.912 262.752 752.352 64 507.456 64z m0 843.408c-220.432 0-399.136-178.88-399.136-399.504C108.32 287.2 287.04 108.368 507.456 108.368c220.432 0 399.136 178.88 399.136 399.536 0 220.624-178.704 399.504-399.136 399.504z m201.28-430.96C639.76 429.44 514.656 359.072 443.36 315.52c-29.232-18.496-53.776-11.088-56.144 21.504-1.728 87.248 0 255.52 0 344.32 1.44 33.04 30.592 37.408 55.92 24.08L708.16 544.736c-0.496-0.272 54.272-30.464 0.592-68.288z" p-id="4463" fill="#2c2c2c" data-spm-anchor-id="a313x.7781069.0.i8" class="selected"></path></svg>
+                <img src="../img/movie/误杀.jpg" alt="" width="72">
+              </div>
+              <div class="item-content">
+                <h4>误杀</h4>
+                <p>猫眼评分&nbsp;<em style="color: #f5d15f;font-size: 14px;">9.4</em></p>
+                <p>主演：肖央，谭卓，陈冲</p>
+                <p>低至4.9元在线看电影</p>
+                <div class="item-play">
+                  <svg t="1591238303486" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6118" width="14" height="14"><path d="M692.4 487.3L412.9 316.9c-19.3-11.8-44 2.1-44 24.7v340.7c0 22.6 24.7 36.5 44 24.7l279.6-170.3c18.5-11.3 18.5-38.1-0.1-49.4z" fill="#d81e06" p-id="6119"></path><path d="M512 0C229.2 0 0 229.2 0 512s229.2 512 512 512 512-229.2 512-512S794.8 0 512 0z m0 947.2C272 947.2 76.8 752 76.8 512S272 76.8 512 76.8 947.2 272 947.2 512 752 947.2 512 947.2z" fill="#d81e06" p-id="6120"></path><path d="M692.4 487.3L412.9 316.9c-4.8-2.9-10-4.3-15-4.3-15.1 0-29 12-29 29v340.7c0 16.9 13.9 29 29 29 5 0 10.2-1.3 15-4.3l279.6-170.3c18.5-11.3 18.5-38.1-0.1-49.4zM445.7 597.1V426.9L585.4 512l-139.7 85.1z" fill="#d81e06" p-id="6121"></path></svg>
+                  <span>播放</span>
+                </div>
+              </div>
+            </li>
+            <li class="movie-item">
+              <div class="item-img">
+                <svg t="1591237178772" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4462" width="28" height="28"><path d="M507.456 64C262.528 64 64 262.752 64 507.904c0 245.12 198.528 443.872 443.456 443.872 244.896 0 443.456-198.752 443.456-443.872C950.912 262.752 752.352 64 507.456 64z m0 843.408c-220.432 0-399.136-178.88-399.136-399.504C108.32 287.2 287.04 108.368 507.456 108.368c220.432 0 399.136 178.88 399.136 399.536 0 220.624-178.704 399.504-399.136 399.504z m201.28-430.96C639.76 429.44 514.656 359.072 443.36 315.52c-29.232-18.496-53.776-11.088-56.144 21.504-1.728 87.248 0 255.52 0 344.32 1.44 33.04 30.592 37.408 55.92 24.08L708.16 544.736c-0.496-0.272 54.272-30.464 0.592-68.288z" p-id="4463" fill="#2c2c2c" data-spm-anchor-id="a313x.7781069.0.i8" class="selected"></path></svg>
+                <img src="../img/movie/两只老虎.jpg" alt="" width="72">
+              </div>
+              <div class="item-content">
+                <h4>两只老虎</h4>
+                <p>猫眼评分&nbsp;<em style="color: #f5d15f;font-size: 14px;">8.0</em></p>
+                <p>主演：葛优，乔杉，赵薇</p>
+                <p>低至4.9元在线看电影</p>
+                <div class="item-play">
+                  <svg t="1591238303486" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6118" width="14" height="14"><path d="M692.4 487.3L412.9 316.9c-19.3-11.8-44 2.1-44 24.7v340.7c0 22.6 24.7 36.5 44 24.7l279.6-170.3c18.5-11.3 18.5-38.1-0.1-49.4z" fill="#d81e06" p-id="6119"></path><path d="M512 0C229.2 0 0 229.2 0 512s229.2 512 512 512 512-229.2 512-512S794.8 0 512 0z m0 947.2C272 947.2 76.8 752 76.8 512S272 76.8 512 76.8 947.2 272 947.2 512 752 947.2 512 947.2z" fill="#d81e06" p-id="6120"></path><path d="M692.4 487.3L412.9 316.9c-4.8-2.9-10-4.3-15-4.3-15.1 0-29 12-29 29v340.7c0 16.9 13.9 29 29 29 5 0 10.2-1.3 15-4.3l279.6-170.3c18.5-11.3 18.5-38.1-0.1-49.4zM445.7 597.1V426.9L585.4 512l-139.7 85.1z" fill="#d81e06" p-id="6121"></path></svg>
+                  <span>播放</span>
+                </div>
+              </div>
+            </li>
+            <li class="movie-item">
+              <div class="item-img">
+                <svg t="1591237178772" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4462" width="28" height="28"><path d="M507.456 64C262.528 64 64 262.752 64 507.904c0 245.12 198.528 443.872 443.456 443.872 244.896 0 443.456-198.752 443.456-443.872C950.912 262.752 752.352 64 507.456 64z m0 843.408c-220.432 0-399.136-178.88-399.136-399.504C108.32 287.2 287.04 108.368 507.456 108.368c220.432 0 399.136 178.88 399.136 399.536 0 220.624-178.704 399.504-399.136 399.504z m201.28-430.96C639.76 429.44 514.656 359.072 443.36 315.52c-29.232-18.496-53.776-11.088-56.144 21.504-1.728 87.248 0 255.52 0 344.32 1.44 33.04 30.592 37.408 55.92 24.08L708.16 544.736c-0.496-0.272 54.272-30.464 0.592-68.288z" p-id="4463" fill="#2c2c2c" data-spm-anchor-id="a313x.7781069.0.i8" class="selected"></path></svg>
+                <img src="../img/movie/黑马黑马.jpg" alt="" width="72">
+              </div>
+              <div class="item-content">
+                <h4>嘿玛 嘿玛</h4>
+                <p>猫眼评分&nbsp;<em style="color: #f5d15f;font-size: 14px;">7.1</em></p>
+                <p>主演：瑟东·拉姆，周迅，梁朝伟</p>
+                <p>低至2.9元在线看电影</p>
+                <div class="item-play">
+                  <svg t="1591238303486" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6118" width="14" height="14"><path d="M692.4 487.3L412.9 316.9c-19.3-11.8-44 2.1-44 24.7v340.7c0 22.6 24.7 36.5 44 24.7l279.6-170.3c18.5-11.3 18.5-38.1-0.1-49.4z" fill="#d81e06" p-id="6119"></path><path d="M512 0C229.2 0 0 229.2 0 512s229.2 512 512 512 512-229.2 512-512S794.8 0 512 0z m0 947.2C272 947.2 76.8 752 76.8 512S272 76.8 512 76.8 947.2 272 947.2 512 752 947.2 512 947.2z" fill="#d81e06" p-id="6120"></path><path d="M692.4 487.3L412.9 316.9c-4.8-2.9-10-4.3-15-4.3-15.1 0-29 12-29 29v340.7c0 16.9 13.9 29 29 29 5 0 10.2-1.3 15-4.3l279.6-170.3c18.5-11.3 18.5-38.1-0.1-49.4zM445.7 597.1V426.9L585.4 512l-139.7 85.1z" fill="#d81e06" p-id="6121"></path></svg>
+                  <span>播放</span>
+                </div>
+              </div>
+            </li>
+            <li class="movie-item">
+              <div class="item-img">
+                <svg t="1591237178772" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4462" width="28" height="28"><path d="M507.456 64C262.528 64 64 262.752 64 507.904c0 245.12 198.528 443.872 443.456 443.872 244.896 0 443.456-198.752 443.456-443.872C950.912 262.752 752.352 64 507.456 64z m0 843.408c-220.432 0-399.136-178.88-399.136-399.504C108.32 287.2 287.04 108.368 507.456 108.368c220.432 0 399.136 178.88 399.136 399.536 0 220.624-178.704 399.504-399.136 399.504z m201.28-430.96C639.76 429.44 514.656 359.072 443.36 315.52c-29.232-18.496-53.776-11.088-56.144 21.504-1.728 87.248 0 255.52 0 344.32 1.44 33.04 30.592 37.408 55.92 24.08L708.16 544.736c-0.496-0.272 54.272-30.464 0.592-68.288z" p-id="4463" fill="#2c2c2c" data-spm-anchor-id="a313x.7781069.0.i8" class="selected"></path></svg>
+                <img src="../img/movie/吹哨人.jpg" alt="" width="72">
+              </div>
+              <div class="item-content">
+                <h4>吹哨人</h4>
+                <p>猫眼评分&nbsp;<em style="color: #f5d15f;font-size: 14px;">8.4</em></p>
+                <p>主演：雷佳音，汤唯，齐溪</p>
+                <p>低至4.9元在线看电影</p>
+                <div class="item-play">
+                  <svg t="1591238303486" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6118" width="14" height="14"><path d="M692.4 487.3L412.9 316.9c-19.3-11.8-44 2.1-44 24.7v340.7c0 22.6 24.7 36.5 44 24.7l279.6-170.3c18.5-11.3 18.5-38.1-0.1-49.4z" fill="#d81e06" p-id="6119"></path><path d="M512 0C229.2 0 0 229.2 0 512s229.2 512 512 512 512-229.2 512-512S794.8 0 512 0z m0 947.2C272 947.2 76.8 752 76.8 512S272 76.8 512 76.8 947.2 272 947.2 512 752 947.2 512 947.2z" fill="#d81e06" p-id="6120"></path><path d="M692.4 487.3L412.9 316.9c-4.8-2.9-10-4.3-15-4.3-15.1 0-29 12-29 29v340.7c0 16.9 13.9 29 29 29 5 0 10.2-1.3 15-4.3l279.6-170.3c18.5-11.3 18.5-38.1-0.1-49.4zM445.7 597.1V426.9L585.4 512l-139.7 85.1z" fill="#d81e06" p-id="6121"></path></svg>
+                  <span>播放</span>
+                </div>
+              </div>
+            </li>
+            <li class="movie-item">
+              <div class="item-img">
+                <svg t="1591237178772" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4462" width="28" height="28"><path d="M507.456 64C262.528 64 64 262.752 64 507.904c0 245.12 198.528 443.872 443.456 443.872 244.896 0 443.456-198.752 443.456-443.872C950.912 262.752 752.352 64 507.456 64z m0 843.408c-220.432 0-399.136-178.88-399.136-399.504C108.32 287.2 287.04 108.368 507.456 108.368c220.432 0 399.136 178.88 399.136 399.536 0 220.624-178.704 399.504-399.136 399.504z m201.28-430.96C639.76 429.44 514.656 359.072 443.36 315.52c-29.232-18.496-53.776-11.088-56.144 21.504-1.728 87.248 0 255.52 0 344.32 1.44 33.04 30.592 37.408 55.92 24.08L708.16 544.736c-0.496-0.272 54.272-30.464 0.592-68.288z" p-id="4463" fill="#2c2c2c" data-spm-anchor-id="a313x.7781069.0.i8" class="selected"></path></svg>
+                <img src="../img/movie/南方车站.jpg" alt="" width="72">
+              </div>
+              <div class="item-content">
+                <h4>南方车站的聚会</h4>
+                <p>猫眼评分&nbsp;<em style="color: #f5d15f;font-size: 14px;">7.9</em></p>
+                <p>主演：胡歌，桂纶镁，廖凡</p>
+                <p>低至4.9元在线看电影</p>
+                <div class="item-play">
+                  <svg t="1591238303486" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6118" width="14" height="14"><path d="M692.4 487.3L412.9 316.9c-19.3-11.8-44 2.1-44 24.7v340.7c0 22.6 24.7 36.5 44 24.7l279.6-170.3c18.5-11.3 18.5-38.1-0.1-49.4z" fill="#d81e06" p-id="6119"></path><path d="M512 0C229.2 0 0 229.2 0 512s229.2 512 512 512 512-229.2 512-512S794.8 0 512 0z m0 947.2C272 947.2 76.8 752 76.8 512S272 76.8 512 76.8 947.2 272 947.2 512 752 947.2 512 947.2z" fill="#d81e06" p-id="6120"></path><path d="M692.4 487.3L412.9 316.9c-4.8-2.9-10-4.3-15-4.3-15.1 0-29 12-29 29v340.7c0 16.9 13.9 29 29 29 5 0 10.2-1.3 15-4.3l279.6-170.3c18.5-11.3 18.5-38.1-0.1-49.4zM445.7 597.1V426.9L585.4 512l-139.7 85.1z" fill="#d81e06" p-id="6121"></path></svg>
+                  <span>播放</span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  
+    <div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
+      <nav class="navbar navbar-default navbar-fixed-bottom">
+        <div class="container">
+          <ul class="nav navbar-nav" >
+            <li>
+              <a class="navbar-brand" href="./index.html">
+                <img src="../img/首页.png">
+                <p>首页</p>
+              </a>
+            </li>
+            <li>
+              <a class="navbar-brand" href="./movie.html">
+                <img src="../img/电影.png">
+                <p>电影</p>
+              </a>
+            </li>
+            <li>
+              <a class="navbar-brand" href="./video.html">
+                <img src="../img/广汽_五分钟小视频.png">
+                <p>小视频</p>
+              </a>
+            </li>
+            <li>
+              <a class="navbar-brand" href="./perform.html">
+                <img src="../img/演出日历.png">
+                <p>演出</p>
+              </a>
+            </li>
+            <li>
+              <a class="navbar-brand" href="./self.html">
+                <img src="../img/我的.png">
+                <p>我的</p>
+              </a>
+            </li>
+          </ul>
+          
+        </div>
+      </nav>
+    </div>
+  </div> 
+
+  <!-- 影院 -->
+  <div data-role="page" id="pagetwo" >
+    <div data-role="header" class="header" data-position="fixed" data-tap-toggle="false" style="height: 37px;">  
+      <div data-role="navbar">
+        <ul >
+          <li style="height: 37.5px;">
+            <a href="#">杭州 <span class="caret"></span></a>
+          </li>
+          <li ><a href="#pageone">热映</a></li>
+          <li ><a href="#pagetwo">影院</a></li>
+          <li ><a href="#pagethree">待映</a></li>
+          <li >
+            <a href=""><img src="../img/查询灰.png" alt=""></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  
+    <div data-role="main" class="ui-content">
+      <div class="container">
+        <div class="box-office">
+          <img src="../img/统计图.png" alt="">
+          <span>实时票房</span>
+          <span style="float: right;">今日大盘<span style="color: red;">0.0万</span>
+          <span style="display:inline-block;border-top:1px solid #ccc;border-right: 1px solid #ccc;width: 8px;height: 8px;transform:rotate(45deg)"></span>
+          </span>
+        </div>
+        <div class="movie-list">
+          <ul class="movie-list " >
+            <li class="movie-item">
+              <div class="item-img">
+                <svg t="1591237178772" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4462" width="28" height="28"><path d="M507.456 64C262.528 64 64 262.752 64 507.904c0 245.12 198.528 443.872 443.456 443.872 244.896 0 443.456-198.752 443.456-443.872C950.912 262.752 752.352 64 507.456 64z m0 843.408c-220.432 0-399.136-178.88-399.136-399.504C108.32 287.2 287.04 108.368 507.456 108.368c220.432 0 399.136 178.88 399.136 399.536 0 220.624-178.704 399.504-399.136 399.504z m201.28-430.96C639.76 429.44 514.656 359.072 443.36 315.52c-29.232-18.496-53.776-11.088-56.144 21.504-1.728 87.248 0 255.52 0 344.32 1.44 33.04 30.592 37.408 55.92 24.08L708.16 544.736c-0.496-0.272 54.272-30.464 0.592-68.288z" p-id="4463" fill="#2c2c2c" data-spm-anchor-id="a313x.7781069.0.i8" class="selected"></path></svg>
+                <img src="../img/movie/误杀.jpg" alt="" width="72">
+              </div>
+              <div class="item-content">
+                <h4>误杀</h4>
+                <p>猫眼评分&nbsp;<em style="color: #f5d15f;font-size: 14px;">9.4</em></p>
+                <p>主演：肖央，谭卓，陈冲</p>
+                <p>低至4.9元在线看电影</p>
+                <div class="item-play">
+                  <svg t="1591238303486" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6118" width="14" height="14"><path d="M692.4 487.3L412.9 316.9c-19.3-11.8-44 2.1-44 24.7v340.7c0 22.6 24.7 36.5 44 24.7l279.6-170.3c18.5-11.3 18.5-38.1-0.1-49.4z" fill="#d81e06" p-id="6119"></path><path d="M512 0C229.2 0 0 229.2 0 512s229.2 512 512 512 512-229.2 512-512S794.8 0 512 0z m0 947.2C272 947.2 76.8 752 76.8 512S272 76.8 512 76.8 947.2 272 947.2 512 752 947.2 512 947.2z" fill="#d81e06" p-id="6120"></path><path d="M692.4 487.3L412.9 316.9c-4.8-2.9-10-4.3-15-4.3-15.1 0-29 12-29 29v340.7c0 16.9 13.9 29 29 29 5 0 10.2-1.3 15-4.3l279.6-170.3c18.5-11.3 18.5-38.1-0.1-49.4zM445.7 597.1V426.9L585.4 512l-139.7 85.1z" fill="#d81e06" p-id="6121"></path></svg>
+                  <span>播放</span>
+                </div>
+              </div>
+            </li>
+            <li class="movie-item">
+              <div class="item-img">
+                <svg t="1591237178772" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4462" width="28" height="28"><path d="M507.456 64C262.528 64 64 262.752 64 507.904c0 245.12 198.528 443.872 443.456 443.872 244.896 0 443.456-198.752 443.456-443.872C950.912 262.752 752.352 64 507.456 64z m0 843.408c-220.432 0-399.136-178.88-399.136-399.504C108.32 287.2 287.04 108.368 507.456 108.368c220.432 0 399.136 178.88 399.136 399.536 0 220.624-178.704 399.504-399.136 399.504z m201.28-430.96C639.76 429.44 514.656 359.072 443.36 315.52c-29.232-18.496-53.776-11.088-56.144 21.504-1.728 87.248 0 255.52 0 344.32 1.44 33.04 30.592 37.408 55.92 24.08L708.16 544.736c-0.496-0.272 54.272-30.464 0.592-68.288z" p-id="4463" fill="#2c2c2c" data-spm-anchor-id="a313x.7781069.0.i8" class="selected"></path></svg>
+                <img src="../img/movie/两只老虎.jpg" alt="" width="72">
+              </div>
+              <div class="item-content">
+                <h4>两只老虎</h4>
+                <p>猫眼评分&nbsp;<em style="color: #f5d15f;font-size: 14px;">8.0</em></p>
+                <p>主演：葛优，乔杉，赵薇</p>
+                <p>低至4.9元在线看电影</p>
+                <div class="item-play">
+                  <svg t="1591238303486" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6118" width="14" height="14"><path d="M692.4 487.3L412.9 316.9c-19.3-11.8-44 2.1-44 24.7v340.7c0 22.6 24.7 36.5 44 24.7l279.6-170.3c18.5-11.3 18.5-38.1-0.1-49.4z" fill="#d81e06" p-id="6119"></path><path d="M512 0C229.2 0 0 229.2 0 512s229.2 512 512 512 512-229.2 512-512S794.8 0 512 0z m0 947.2C272 947.2 76.8 752 76.8 512S272 76.8 512 76.8 947.2 272 947.2 512 752 947.2 512 947.2z" fill="#d81e06" p-id="6120"></path><path d="M692.4 487.3L412.9 316.9c-4.8-2.9-10-4.3-15-4.3-15.1 0-29 12-29 29v340.7c0 16.9 13.9 29 29 29 5 0 10.2-1.3 15-4.3l279.6-170.3c18.5-11.3 18.5-38.1-0.1-49.4zM445.7 597.1V426.9L585.4 512l-139.7 85.1z" fill="#d81e06" p-id="6121"></path></svg>
+                  <span>播放</span>
+                </div>
+              </div>
+            </li>
+            <li class="movie-item">
+              <div class="item-img">
+                <svg t="1591237178772" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4462" width="28" height="28"><path d="M507.456 64C262.528 64 64 262.752 64 507.904c0 245.12 198.528 443.872 443.456 443.872 244.896 0 443.456-198.752 443.456-443.872C950.912 262.752 752.352 64 507.456 64z m0 843.408c-220.432 0-399.136-178.88-399.136-399.504C108.32 287.2 287.04 108.368 507.456 108.368c220.432 0 399.136 178.88 399.136 399.536 0 220.624-178.704 399.504-399.136 399.504z m201.28-430.96C639.76 429.44 514.656 359.072 443.36 315.52c-29.232-18.496-53.776-11.088-56.144 21.504-1.728 87.248 0 255.52 0 344.32 1.44 33.04 30.592 37.408 55.92 24.08L708.16 544.736c-0.496-0.272 54.272-30.464 0.592-68.288z" p-id="4463" fill="#2c2c2c" data-spm-anchor-id="a313x.7781069.0.i8" class="selected"></path></svg>
+                <img src="../img/movie/黑马黑马.jpg" alt="" width="72">
+              </div>
+              <div class="item-content">
+                <h4>嘿玛 嘿玛</h4>
+                <p>猫眼评分&nbsp;<em style="color: #f5d15f;font-size: 14px;">7.1</em></p>
+                <p>主演：瑟东·拉姆，周迅，梁朝伟</p>
+                <p>低至2.9元在线看电影</p>
+                <div class="item-play">
+                  <svg t="1591238303486" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6118" width="14" height="14"><path d="M692.4 487.3L412.9 316.9c-19.3-11.8-44 2.1-44 24.7v340.7c0 22.6 24.7 36.5 44 24.7l279.6-170.3c18.5-11.3 18.5-38.1-0.1-49.4z" fill="#d81e06" p-id="6119"></path><path d="M512 0C229.2 0 0 229.2 0 512s229.2 512 512 512 512-229.2 512-512S794.8 0 512 0z m0 947.2C272 947.2 76.8 752 76.8 512S272 76.8 512 76.8 947.2 272 947.2 512 752 947.2 512 947.2z" fill="#d81e06" p-id="6120"></path><path d="M692.4 487.3L412.9 316.9c-4.8-2.9-10-4.3-15-4.3-15.1 0-29 12-29 29v340.7c0 16.9 13.9 29 29 29 5 0 10.2-1.3 15-4.3l279.6-170.3c18.5-11.3 18.5-38.1-0.1-49.4zM445.7 597.1V426.9L585.4 512l-139.7 85.1z" fill="#d81e06" p-id="6121"></path></svg>
+                  <span>播放</span>
+                </div>
+              </div>
+            </li>
+            <li class="movie-item">
+              <div class="item-img">
+                <svg t="1591237178772" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4462" width="28" height="28"><path d="M507.456 64C262.528 64 64 262.752 64 507.904c0 245.12 198.528 443.872 443.456 443.872 244.896 0 443.456-198.752 443.456-443.872C950.912 262.752 752.352 64 507.456 64z m0 843.408c-220.432 0-399.136-178.88-399.136-399.504C108.32 287.2 287.04 108.368 507.456 108.368c220.432 0 399.136 178.88 399.136 399.536 0 220.624-178.704 399.504-399.136 399.504z m201.28-430.96C639.76 429.44 514.656 359.072 443.36 315.52c-29.232-18.496-53.776-11.088-56.144 21.504-1.728 87.248 0 255.52 0 344.32 1.44 33.04 30.592 37.408 55.92 24.08L708.16 544.736c-0.496-0.272 54.272-30.464 0.592-68.288z" p-id="4463" fill="#2c2c2c" data-spm-anchor-id="a313x.7781069.0.i8" class="selected"></path></svg>
+                <img src="../img/movie/吹哨人.jpg" alt="" width="72">
+              </div>
+              <div class="item-content">
+                <h4>吹哨人</h4>
+                <p>猫眼评分&nbsp;<em style="color: #f5d15f;font-size: 14px;">8.4</em></p>
+                <p>主演：雷佳音，汤唯，齐溪</p>
+                <p>低至4.9元在线看电影</p>
+                <div class="item-play">
+                  <svg t="1591238303486" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6118" width="14" height="14"><path d="M692.4 487.3L412.9 316.9c-19.3-11.8-44 2.1-44 24.7v340.7c0 22.6 24.7 36.5 44 24.7l279.6-170.3c18.5-11.3 18.5-38.1-0.1-49.4z" fill="#d81e06" p-id="6119"></path><path d="M512 0C229.2 0 0 229.2 0 512s229.2 512 512 512 512-229.2 512-512S794.8 0 512 0z m0 947.2C272 947.2 76.8 752 76.8 512S272 76.8 512 76.8 947.2 272 947.2 512 752 947.2 512 947.2z" fill="#d81e06" p-id="6120"></path><path d="M692.4 487.3L412.9 316.9c-4.8-2.9-10-4.3-15-4.3-15.1 0-29 12-29 29v340.7c0 16.9 13.9 29 29 29 5 0 10.2-1.3 15-4.3l279.6-170.3c18.5-11.3 18.5-38.1-0.1-49.4zM445.7 597.1V426.9L585.4 512l-139.7 85.1z" fill="#d81e06" p-id="6121"></path></svg>
+                  <span>播放</span>
+                </div>
+              </div>
+            </li>
+            <li class="movie-item">
+              <div class="item-img">
+                <svg t="1591237178772" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4462" width="28" height="28"><path d="M507.456 64C262.528 64 64 262.752 64 507.904c0 245.12 198.528 443.872 443.456 443.872 244.896 0 443.456-198.752 443.456-443.872C950.912 262.752 752.352 64 507.456 64z m0 843.408c-220.432 0-399.136-178.88-399.136-399.504C108.32 287.2 287.04 108.368 507.456 108.368c220.432 0 399.136 178.88 399.136 399.536 0 220.624-178.704 399.504-399.136 399.504z m201.28-430.96C639.76 429.44 514.656 359.072 443.36 315.52c-29.232-18.496-53.776-11.088-56.144 21.504-1.728 87.248 0 255.52 0 344.32 1.44 33.04 30.592 37.408 55.92 24.08L708.16 544.736c-0.496-0.272 54.272-30.464 0.592-68.288z" p-id="4463" fill="#2c2c2c" data-spm-anchor-id="a313x.7781069.0.i8" class="selected"></path></svg>
+                <img src="../img/movie/南方车站.jpg" alt="" width="72">
+              </div>
+              <div class="item-content">
+                <h4>南方车站的聚会</h4>
+                <p>猫眼评分&nbsp;<em style="color: #f5d15f;font-size: 14px;">7.9</em></p>
+                <p>主演：胡歌，桂纶镁，廖凡</p>
+                <p>低至4.9元在线看电影</p>
+                <div class="item-play">
+                  <svg t="1591238303486" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6118" width="14" height="14"><path d="M692.4 487.3L412.9 316.9c-19.3-11.8-44 2.1-44 24.7v340.7c0 22.6 24.7 36.5 44 24.7l279.6-170.3c18.5-11.3 18.5-38.1-0.1-49.4z" fill="#d81e06" p-id="6119"></path><path d="M512 0C229.2 0 0 229.2 0 512s229.2 512 512 512 512-229.2 512-512S794.8 0 512 0z m0 947.2C272 947.2 76.8 752 76.8 512S272 76.8 512 76.8 947.2 272 947.2 512 752 947.2 512 947.2z" fill="#d81e06" p-id="6120"></path><path d="M692.4 487.3L412.9 316.9c-4.8-2.9-10-4.3-15-4.3-15.1 0-29 12-29 29v340.7c0 16.9 13.9 29 29 29 5 0 10.2-1.3 15-4.3l279.6-170.3c18.5-11.3 18.5-38.1-0.1-49.4zM445.7 597.1V426.9L585.4 512l-139.7 85.1z" fill="#d81e06" p-id="6121"></path></svg>
+                  <span>播放</span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   
     <div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
@@ -111,5 +408,76 @@
     </div>
   </div> 
   
+  <!-- 待映 -->
+  <div data-role="page" id="pagethree" >
+    <div data-role="header" class="header" data-position="fixed" data-tap-toggle="false" style="height: 37px;">  
+      <div data-role="navbar">
+        <ul >
+          <li style="height: 37.5px;">
+            <a href="#">杭州 <span class="caret"></span></a>
+          </li>
+          <li ><a href="#pageone">热映</a></li>
+          <li ><a href="#pagetwo">影院</a></li>
+          <li ><a href="#pagethree">待映</a></li>
+          <li >
+            <a href=""><img src="../img/查询灰.png" alt=""></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  
+    <div data-role="main" class="ui-content">
+      <div class="container">
+        <div class="content-one">
+          <h3>预告片推荐</h3>
+          <ul class="List">
+            <li>
+              <img src="" alt="">
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  
+    <div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
+      <nav class="navbar navbar-default navbar-fixed-bottom">
+        <div class="container">
+          <ul class="nav navbar-nav" >
+            <li>
+              <a class="navbar-brand" href="./index.html">
+                <img src="../img/首页.png">
+                <p>首页</p>
+              </a>
+            </li>
+            <li>
+              <a class="navbar-brand" href="./movie.html">
+                <img src="../img/电影.png">
+                <p>电影</p>
+              </a>
+            </li>
+            <li>
+              <a class="navbar-brand" href="./video.html">
+                <img src="../img/广汽_五分钟小视频.png">
+                <p>小视频</p>
+              </a>
+            </li>
+            <li>
+              <a class="navbar-brand" href="./perform.html">
+                <img src="../img/演出日历.png">
+                <p>演出</p>
+              </a>
+            </li>
+            <li>
+              <a class="navbar-brand" href="./self.html">
+                <img src="../img/我的.png">
+                <p>我的</p>
+              </a>
+            </li>
+          </ul>
+          
+        </div>
+      </nav>
+    </div>
+  </div> 
 </body>
 </html>
