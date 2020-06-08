@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="../../js/jquery-1.11.1/jquery.min.js"></script>
+  <script src="../../js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <!-- 引入bootstrap 样式文件 -->
+  <link rel="stylesheet" href="../../js/bootstrap/css/bootstrap.min.css">
+  <!-- 先引入jquery js文件 -->
+  <script src="../../js/bootstrap/js/bootstrap.min.js"></script>
+  <title>猫眼电影</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    #page{
+      background-color: #fff;
+    }
+    #header {
+      position: relative;
+      background-color: #fff;
+      border: none;
+      height: 44px;
+      overflow: hidden;
+      text-shadow: none;
+      font-weight: normal;
+    }
+
+    #header .ui-input-search {
+      margin: 7px 50px 5px 5px;
+      /* padding: 5px; */
+      border: 1px solid #e9e9e9;
+      box-shadow: none;
+      border-radius: 15px;
+      background-color: #e9e9e9;
+    }
+
+    #header .search-login {
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 40px;
+      height: 44px;
+      color: #fff;
+      line-height: 44px;
+      color: #777777;
+      text-decoration: none;
+    }
+    #header .ui-btn-left{
+      left: 100%;
+      transform: translate(-100%);
+    }
+    #main{
+      padding: 0;
+    }
+    #main ul{
+      box-shadow: none;
+      border-radius: 0;
+    }
+    #main ul a{
+      /* box-sizing: border-box; */
+      padding-left: 4.25em;
+      background-color: #fff;
+      color: #777777;
+      font-weight: normal;
+    }
+    #main ul a img{
+      width: 40px;
+      height: 49px;
+      margin: 5px 0 0 5px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div data-role="page" id="page">
+    <div data-role="header" id="header">
+      <input id="myFilter" data-type="search" class="search" placeholder="找影视剧、影人、影院、演出、图书">
+      <a href="#" class="search-login ui-btn-left" data-role="none" data-rel="back">取消</a>
+    </div>
+    <div data-role="main" class="ui-content" id="main">
+      <ul data-role="listview" data-filter="true" data-input="#myFilter"data-inset="true" id="list" style="display: none;">
+        <li><a href="./hello_teacher.html" data-ajax="false"><img src="../../img/movie/老师好.jpg">老师好</a></li>
+        <li><a href="#"><img src="../../img/movie/两只老虎.jpg">两只老虎</a></li>
+        <li><a href="#"><img src="../../img/movie/误杀.jpg">误杀</a></li>
+        <li><a href="#"><img src="../../img/movie/南方车站.jpg">南方车站</a></li>
+        <li><a href="#"><img src="../../img/movie/只有爱.jpg">只有爱</a></li>
+        <li><a href="#"><img src="../../img/movie/两只老虎.jpg">少年的你</a></li>
+        <li><a href="#"><img src="../../img/movie/天上再见.jpg">天上再见</a></li>
+        <li><a href="#"><img src="../../img/movie/贴身保镖.jpg">贴身保镖</a></li>
+        <li><a href="#"><img src="../../img/movie/吹哨人.jpg">吹哨人</a></li>
+        <li><a href="#"><img src="../../img/movie/两只老虎.jpg">阿甘正传</a></li>
+        <li><a href="#"><img src="../../img/movie/两只老虎.jpg">中国机长</a></li>
+        <li><a href="#"><img src="../../img/movie/两只老虎.jpg">大闹天宫</a></li>
+        <li><a href="#"><img src="../../img/movie/两只老虎.jpg">唐人街探案</a></li>
+        <li><a href="#"><img src="../../img/movie/两只老虎.jpg">疯狂动物城</a></li>
+      </ul>
+    </div>
+  </div>
+  <script>
+    var list = document.getElementById('list')
+    var input = document.getElementById('myFilter')
+    input.oninput = function(){
+      if(this.value){
+        list.style.display = 'block'
+      }else{
+        list.style.display = 'none'
+      }
+    }
+    input.onfocus = function(){
+      list.style.display = 'none'
+    }
+    // input.onblur = function(){
+    //   list.style.display = 'none'
+    // }
+  </script>
+</body>
+
+</html>

@@ -20,55 +20,32 @@
       padding: 0;
       margin: 0;
     }
-    #pageone{
-      height: 100%;
-    }
-    .header{
-      height: 9%;
-    }
-    .ui-content{
-      height: 80%;
-    }
-    .footer{
-      height: 10%;
-    }
-    .nav.navbar-nav{
+    
+    .nav.navbar-nav {
       display: flex;
     }
-    .nav.navbar-nav >li{
+
+    .nav.navbar-nav>li {
       flex: 1;
     }
-    .navbar-brand{
+
+    .nav.navbar-nav li a {
+      width: 100%;
+      text-align: center;
+    }
+
+    .navbar-brand {
       font-size: 12px;
     }
-    .navbar-brand img{
+
+    .navbar-brand img {
+      display: inline-block;
       width: 24px;
     }
   </style>
 </head>
 <body>
   <div data-role="page" id="pageone" >
-    <div data-role="header" class="header" data-position="fixed" data-tap-toggle="false">
-      <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-          <ul class="nav navbar-nav" >
-            <li class="dropdown" >
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">杭州 <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">上海</a></li>
-                <li><a href="#">北京</a></li>
-                <li><a href="#">杭州</a></li>
-                <li><a href="#">深圳</a></li>
-                <li><a href="#">江西</a></li>
-              </ul>
-            </li>
-            <li ><a href="#" style="width: 230px;text-align: center;">演出</a></li>
-            <li class="find"><a href="#"><img src="../../img/component/查询.png" alt="" width="24"></a></li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-  
     <div data-role="main" class="ui-content">
       <p>我的内容..</p>
     </div>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="../../js/jquery-1.11.1/jquery.min.js"></script>
+  <script src="../../js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <!-- 引入bootstrap 样式文件 -->
+  <link rel="stylesheet" href="../../js/bootstrap/css/bootstrap.min.css">
+  <!-- 先引入jquery js文件 -->
+  <script src="../../js/bootstrap/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1867603_aq1jizj6qwn.css">
+  <title>猫眼电影</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    #pageone {
+      background-color: #f3f3f3;
+    }
+
+    #header {
+      position: relative;
+      background-color: #fff;
+      text-align: center;
+      color: #fff;
+      text-shadow: none;
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+
+    #header .title {
+      height: 50px;
+      line-height: 50px;
+      font-weight: normal;
+      font-size: 20px;
+      color: #000;
+      font-weight: bold;
+    }
+
+    #header .arrow {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 50%;
+      transform: translate(70%, -50%) rotate(45deg);
+      margin: 0;
+      padding: 0;
+      box-shadow: none;
+      background-color: #fff;
+      border-left: 2px solid #ed1c23;
+      border-bottom: 2px solid #ed1c23;
+      border-right: none;
+      border-top: none;
+      border-radius: 0;
+    }
+
+    #main {
+      overflow: hidden;
+    }
+
+    #main #safety,
+    #main #wifi {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    #main #safety a,
+    #main #wifi a {
+      background-color: #fff;
+      border: 0;
+      /* margin: 20px 0; */
+    }
+
+    #main #wifi .ui-btn-icon-right{
+      padding-right: 0.3em;
+    }
+    #main #wifi .ui-btn-icon-right:after{
+      content: none;
+    }
+
+    .swich, .swich .ui-checkbox{
+      display: inline;
+    }
+    .swich .box {
+      float: right;
+      width: 54px;
+      height: 24px;
+      background: #ccc;
+      border-radius: 20px;
+      transition: all .5s ease;
+    }
+
+    .swich input {
+      display: none;
+    }
+
+    .swich .box span {
+      display: inline-block;
+      height: 24px;
+      width: 24px;
+      border-radius: 15px;
+      background: #fff;
+      transform: translateX(0px);
+      transition: all .5s ease;
+    }
+
+    .swich-on .box {display: inline-block;
+      background: forestgreen;
+      transition: all .5s ease;
+    }
+
+    .swich-on .box span {
+      transform: translateX(30px);
+      transition: all .5s ease;
+    }
+
+    #main .button {
+      background-color: #ed1c23;
+      color: #fff;
+      letter-spacing: 2px;
+      font-family: serif;
+      font-weight: normal;
+      font-size: 20px;
+      border-radius: 5px;
+    }
+
+    #main .button:hover {
+      background-color: #ef4238;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <div data-role="page" id="pageone">
+    <div data-role="header" id="header">
+      <a href="./self.html" class="arrow" data-ajax="false"></a>
+      <div class="title">
+        设置
+      </div>
+    </div>
+    <div data-role="main" class="ui-content" id="main">
+      <ul data-role="listview" id="safety">
+        <li><a href="#" id="safety">账号与安全</a></li>
+      </ul>
+      <ul data-role="listview" id="wifi">
+        <li>
+          <a href="#" data-role="none">
+            <div class="swich">
+              Wi-Fi环境自动播放
+              <input type="checkbox" value="" name="" />
+              <div class="box">
+                <span></span>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" data-role="none">
+            <div class="swich">
+              移动流量自动播放
+              <input type="checkbox" value="" name="" />
+              <div class="box">
+                <span></span>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+      <ul data-role="listview" id="wifi">
+        <li>
+          <a href="#" data-role="none">
+            <div class="swich">
+              问答邀请提醒
+              <input type="checkbox" value="" name="" />
+              <div class="box">
+                <span></span>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" data-role="none">
+            <div class="swich">
+              被赞提醒
+              <input type="checkbox" value="" name="" />
+              <div class="box">
+                <span></span>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" data-role="none">
+            <div class="swich">
+              影评/话题提醒
+              <input type="checkbox" value="" name="" />
+              <div class="box">
+                <span></span>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" data-role="none">
+            <div class="swich">
+              系统通知
+              <input type="checkbox" value="" name="" />
+              <div class="box">
+                <span></span>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" data-role="none">
+            <div class="swich">
+              个性化推荐
+              <input type="checkbox" value="" name="" />
+              <div class="box">
+                <span></span>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+      <ul data-role="listview" id="safety">
+        <li><a href="./evaluate.html" id="safety" data-ajax="false">淘电影用户满意度调查</a></li>
+      </ul>
+      <a href="../login/login.html" class="ui-btn button" data-ajax="false">退出登录</a>
+    </div>
+  </div>
+  <script>
+    (function(select){
+        var box = document.querySelectorAll(select)
+        for(let i = 0; i < box.length; i++){
+          var checkbox = box[i].querySelector("input");
+          box[i].onclick = function(){
+            this.classList.toggle("swich-on");
+            if(checkbox.checked){
+                console.log("已经选中");
+                checkbox.checked = "true";
+            }else{
+                console.log("没有选中");
+                checkbox.checked = "false";
+            }
+        }
+        }
+    })(".swich");
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="../../js/jquery-1.11.1/jquery.min.js"></script>
+  <script src="../../js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <!-- 引入bootstrap 样式文件 -->
+  <link rel="stylesheet" href="../../js/bootstrap/css/bootstrap.min.css">
+  <!-- 先引入jquery js文件 -->
+  <script src="../../js/bootstrap/js/bootstrap.min.js"></script>
+  <title>猫眼电影</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    #header {
+      position: relative;
+      background-color: #fff;
+      text-align: center;
+      color: #fff;
+      text-shadow: none;
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+
+    #header .title {
+      height: 50px;
+      line-height: 50px;
+      font-weight: normal;
+      font-size: 20px;
+      color: #000;
+      font-weight: bold;
+    }
+
+    #header .arrow {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 50%;
+      transform: translate(70%, -50%) rotate(45deg);
+      margin: 0;
+      padding: 0;
+      box-shadow: none;
+      background-color: #fff;
+      border-left: 2px solid #ed1c23;
+      border-bottom: 2px solid #ed1c23;
+      border-right: none;
+      border-top: none;
+      border-radius: 0;
+    }
+
+    .logo {
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .text {
+      color: #000000;
+      position: absolute;
+      left: 50%;
+      top: 30%;
+      transform: translateX(-50%);
+      font-size: 25px;
+      font-family: Helvetica, Tahoma, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", STXihei, STHeiti, Heiti, SimSun, sans-serif;
+    }
+
+    .comment {
+      width: 250px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 47px;
+      color: #ff1100;
+      text-align: center;
+    }
+
+    .comment li {
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    #main .button {
+      position: absolute;
+      left: 50%;
+      bottom: 30%;
+      transform: translate(-50%, 50%);
+      background-color: #ed1c23;
+      color: #fff;
+      letter-spacing: 2px;
+      font-family: serif;
+      font-weight: normal;
+      font-size: 20px;
+      border-radius: 5px;
+    }
+
+    #main .button:hover {
+      background-color: #ef4238;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <div data-role="page" id="page">
+    <div data-role="header" id="header">
+      <a href="./set.html" class="arrow" data-ajax="false"></a>
+      <div class="title">
+        设置
+      </div>
+    </div>
+    <div data-role="main" id="main">
+      <img src="../../img/logo.png" alt="logo" class="logo">
+      <p class="text">淘电影</p>
+      <ul class="comment">
+        <li>☆</li>
+        <li>☆</li>
+        <li>☆</li>
+        <li>☆</li>
+        <li>☆</li>
+      </ul>
+      <a href="./set.html" class="ui-btn button" data-ajax="false">提交</a>
+    </div>
+  </div>
+  <script>
+    $(function () {
+      //需求1：鼠标进入哪个li，当前的和之前的所有全部变为实心五角星;
+      //需求2：鼠标移开ul, 默认全部空心，如果点击过某一个就以他为基准，之前的全部实心;
+      //需求3：鼠标点击哪个li，这个li就是参考li;
+      //技术点，点击谁，可以记录索引值，也可以通过一个类名控制;
+
+      //空心五角星和实心五角星
+      var KX_WJX = "☆";
+      var SX_WJX = "★";
+
+      //需求1：鼠标进入哪个li，当前的和之前的所有全部变为实心五角星;
+      $(".comment>li").on("mouseenter", function () {
+        //当前的和之前的所有全部变为实心五角星;其他的变为空心;
+        $(this).text(SX_WJX).prevAll("li").text(SX_WJX);
+        $(this).nextAll("li").text(KX_WJX);
+      });
+      //需求2：鼠标移开ul, 默认全部空心，如果点击过某一个就以他为基准，之前的全部实心;
+      $(".comment").on("mouseleave", function () {
+        //如果有类名，就要以类名为参考点;
+        if ($(".current").length == 0) {
+          //等于0就说明没有点击过;
+          $(".comment>li").text(KX_WJX);
+        } else {
+          //不等于0，肯定等于1；就说明点击过，那么就以他为参考点;
+          $(".current").text(SX_WJX).prevAll("li").text(SX_WJX)
+          $(".current").nextAll("li").text(KX_WJX);
+        }
+
+      });
+      //需求3：鼠标点击哪个li，这个li就是参考li;(当前的添加类，其他的删除类)
+      $(".comment>li").on("click", function () {
+        $(this).addClass("current").siblings("li").removeAttr("class");
+      })
+
+    });
+  </script>
+</body>
+
+</html>
