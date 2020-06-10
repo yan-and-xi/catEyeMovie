@@ -151,19 +151,27 @@
   <!-- 热映 -->
   <div data-role="page" id="pageone" >
     <div data-role="header" class="header" data-position="fixed" data-tap-toggle="false" style="height: 37px;">  
-      <div data-role="navbar">
-        <ul >
-          <li style="height: 37.5px;">
-            <a href="#">杭州 <span class="caret"></span></a>
-          </li>
-          <li ><a href="#pageone">热映</a></li>
-          <li ><a href="#pagetwo">影院</a></li>
-          <li ><a href="#pagethree">待映</a></li>
-          <li >
-            <a href=""><img src="../../img/component/查询灰.png" alt=""></a>
-          </li>
-        </ul>
-      </div>
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">杭州 <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">江西</a></li>
+                <li><a href="#">北京</a></li>
+                <li><a href="#">深圳</a></li>
+                <li><a href="#">上海</a></li>
+              </ul>
+            </li>
+            <li><a href="./movie.html" data-ajax=false>热映</a></li>
+            <li><a href="./cinema.html" data-ajax=false>影院</a></li>
+            <li><a href="./reflected.html" data-ajax=false>待映</a></li>
+            <li><a href="">
+              <svg t="1591795274330" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709" width="16" height="16"><path d="M433.6 140.6c36.2 0 71.3 7.1 104.4 21.1 31.9 13.5 60.6 32.9 85.3 57.5s44 53.3 57.5 85.3c14 33 21.1 68.2 21.1 104.4s-7.1 71.3-21.1 104.4c-13.5 31.9-32.9 60.6-57.5 85.3-24.6 24.6-53.3 44-85.3 57.5-33 14-68.2 21.1-104.4 21.1s-71.3-7.1-104.4-21.1c-31.9-13.5-60.6-32.9-85.3-57.5-24.6-24.6-44-53.3-57.5-85.3-14-33-21.1-68.2-21.1-104.4s7.1-71.3 21.1-104.4c13.5-31.9 32.9-60.6 57.5-85.3s53.3-44 85.3-57.5c33.1-14 68.2-21.1 104.4-21.1m0-50c-175.7 0-318.2 142.5-318.2 318.2S257.9 727 433.6 727s318.2-142.5 318.2-318.2S609.4 90.6 433.6 90.6zM622.41 657.834l35.355-35.355L846.207 810.92l-35.355 35.355z" fill="#d81e06" p-id="2710"></path></svg>
+            </a></li>
+          </ul>
+        </div><!-- /.container-fluid -->
+      </nav>
     </div>
   
     <div data-role="main" class="ui-content">
