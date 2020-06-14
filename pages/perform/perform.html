@@ -20,6 +20,9 @@
       padding: 0;
       margin: 0;
     }
+    ul,li{
+      list-style: none;
+    }
     #pageone{
       height: 100%;
     }
@@ -55,6 +58,70 @@
     .navbar-brand img{
       width: 24px;
     }
+    .first{
+      margin: 15px 0 auto;
+    }
+    .first-list{
+      display: flex;
+      margin-left: 5px;
+    }
+    .first-list-item {
+      flex: 1;
+      margin: 0 6px;
+    }
+    .first-list-item div{
+      width: 50px;
+      height: 50px;
+      background-color: #eb594c;
+      border-radius: 50%;
+      position: relative;
+    }
+    .first-list-item div img{
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+    }
+    .first-list-item p{
+      color: #8c8c8c;
+      line-height: 30px;
+    }
+    .second{
+      margin: 15px 0 auto;
+    }
+    .second-list{
+      display: flex;
+      overflow-y: auto;
+    }
+    .second-list-item {
+      margin: 0 10px;
+    }
+    .second-list-item div{
+      margin: 5px;
+      width: 50px;
+      height: 50px;
+      background-color: #eb594c;
+      border-radius: 50%;
+      position: relative;
+    }
+    .second-list-item img{
+      width: 50px;
+      height: 50px;
+      border-radius: 100%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+    }
+    .second-list-item h5{
+      text-align: center;
+    }
+    .second-list-item p{
+      color: #8c8c8c;
+      font-size: 12px;
+      /* line-height: 30px; */
+      text-align: center;
+    }
   </style>
 </head>
 <body>
@@ -84,6 +151,146 @@
       <div class="search">
         <svg t="1591797729899" class="icon searchIcon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2710" width="16" height="16"><path d="M433.6 140.6c36.2 0 71.3 7.1 104.4 21.1 31.9 13.5 60.6 32.9 85.3 57.5s44 53.3 57.5 85.3c14 33 21.1 68.2 21.1 104.4s-7.1 71.3-21.1 104.4c-13.5 31.9-32.9 60.6-57.5 85.3-24.6 24.6-53.3 44-85.3 57.5-33 14-68.2 21.1-104.4 21.1s-71.3-7.1-104.4-21.1c-31.9-13.5-60.6-32.9-85.3-57.5-24.6-24.6-44-53.3-57.5-85.3-14-33-21.1-68.2-21.1-104.4s7.1-71.3 21.1-104.4c13.5-31.9 32.9-60.6 57.5-85.3s53.3-44 85.3-57.5c33.1-14 68.2-21.1 104.4-21.1m0-50c-175.7 0-318.2 142.5-318.2 318.2S257.9 727 433.6 727s318.2-142.5 318.2-318.2S609.4 90.6 433.6 90.6zM622.41 657.834l35.355-35.355L846.207 810.92l-35.355 35.355z" fill="#999999" p-id="2711"></path></svg>
         <input type="text" class="form-control" placeholder="找明星、演出、场馆">
+      </div>
+      <div class="first">
+        <ul class="first-list">
+          <li class="first-list-item">
+            <div>
+              <img src="../../img/perform/话筒.png" alt="">
+            </div>
+            <p>演唱会</p>
+          </li>
+          <li class="first-list-item">
+            <div>
+              <img src="../../img/perform/小丑.png" alt="">
+            </div>
+            <p>话剧歌剧</p>
+          </li>
+          <li class="first-list-item">
+            <div>
+              <img src="../../img/perform/照片.png" alt="">
+            </div>
+            <p>休闲展览</p>
+          </li>
+          <li class="first-list-item">
+            <div>
+              <img src="../../img/perform/扇子.png" alt="">
+            </div>
+            <p>戏曲相声</p>
+          </li>
+          <li class="first-list-item">
+            <div>
+              <img src="../../img/perform/菜单.png" alt="">
+            </div>
+            <p>亲子艺术</p>
+          </li>
+        </ul>
+      </div>
+      <div class="second">
+        <h4>大咖新动态</h4>
+        <ul class="second-list">
+          <li class="second-list-item">
+            <div>
+              <img src="../../img/perform/火箭少女.jpeg" width="50" alt="">
+            </div>
+            <h5>火箭少女</h5>
+            <p>去看最近动态</p>
+          </li>
+          <li class="second-list-item">
+            <div>
+              <img src="../../img/perform/周杰伦.jpeg" width="50" alt="">
+            </div>
+            <h5>周杰伦</h5>
+            <p>有新视频</p>
+          </li>
+          <li class="second-list-item">
+            <div>
+              <img src="../../img/perform/蔡依林.jpeg"  width="50" alt="">
+            </div>
+            <h5>蔡依林</h5>
+            <p>去看最近动态</p>
+          </li>
+          <li class="second-list-item">
+            <div>
+              <img src="../../img/perform/陈奕迅.jpeg" width="50" alt="">
+            </div>
+            <h5>陈奕迅</h5>
+            <p>去看最近动态</p>
+          </li>
+          <li class="second-list-item">
+            <div>
+              <img src="../../img/perform/邓紫棋.jpeg" width="50" alt="">
+            </div>
+            <h5>邓紫棋</h5>
+            <p>去看最近动态</p>
+          </li>
+          <li class="second-list-item">
+            <div>
+              <img src="../../img/perform/房东的猫.jpeg" width="50" alt="">
+            </div>
+            <h5>房东的猫</h5>
+            <p>去看最近动态</p>
+          </li>
+          <li class="second-list-item">
+            <div>
+              <img src="../../img/perform/郭德纲.jpeg" width="50" alt="">
+            </div>
+            <h5>郭德纲</h5>
+            <p>去看最近动态</p>
+          </li>
+        </ul>
+      </div>
+      <div class="third">
+        <h4>为你推荐</h4>
+        <ul class="third-list">
+          <li class="third-list-item">
+            <img src="../../img/perform/" width="50" alt="">
+            <h5>【南昌】新中原大剧院演出门票</h5>
+            <p>2020.5.30 - 2020.8.31</p>
+          </li>
+          <li class="third-list-item">
+            <div>
+              <img src="../../img/perform/周杰伦.jpeg" width="50" alt="">
+            </div>
+            <h5>周杰伦</h5>
+            <p>有新视频</p>
+          </li>
+          <li class="third-list-item">
+            <div>
+              <img src="../../img/perform/蔡依林.jpeg"  width="50" alt="">
+            </div>
+            <h5>蔡依林</h5>
+            <p>去看最近动态</p>
+          </li>
+          <li class="third-list-item">
+            <div>
+              <img src="../../img/perform/陈奕迅.jpeg" width="50" alt="">
+            </div>
+            <h5>陈奕迅</h5>
+            <p>去看最近动态</p>
+          </li>
+          <li class="third-list-item">
+            <div>
+              <img src="../../img/perform/邓紫棋.jpeg" width="50" alt="">
+            </div>
+            <h5>邓紫棋</h5>
+            <p>去看最近动态</p>
+          </li>
+          <li class="third-list-item">
+            <div>
+              <img src="../../img/perform/房东的猫.jpeg" width="50" alt="">
+            </div>
+            <h5>房东的猫</h5>
+            <p>去看最近动态</p>
+          </li>
+          <li class="third-list-item">
+            <div>
+              <img src="../../img/perform/郭德纲.jpeg" width="50" alt="">
+            </div>
+            <h5>郭德纲</h5>
+            <p>去看最近动态</p>
+          </li>
+        </ul>
       </div>
       </div>
     </div>
