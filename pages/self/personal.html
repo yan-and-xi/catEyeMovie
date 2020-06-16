@@ -173,7 +173,7 @@
       <a href="#" class="arrow" data-ajax="false" data-rel="back"></a>
       <div class="photo">
         <img src="../../img/mine/头像.png" alt="">
-        <p>妍等等</p>
+        <p id="user"></p>
       </div>
     </div>
     <div data-role="main" class="ui-content" id="main">
@@ -231,6 +231,7 @@
             // 3.让下部里面相应索引号的item显示，其余的item隐藏
             $(".tab_con .item").eq(index).show().siblings().hide();
         });
+        $('#user').html(sessionStorage.getItem('login'))
     })
 </script>
 </body>

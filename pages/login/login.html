@@ -104,10 +104,26 @@
   </div>
   <script>
     var form = document.getElementById('form')
+    var emailReg = /^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/
+    var phoneReg = /^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(18[0,5-9]))\d{8}$/
+    var nameReg = /^[a-zA-z][A-Za-z0-9]{4,14}$/
+    var pswReg = /^[0-9a-zA-Z]{6,8}$/
     form.addEventListener('submit', validate, false)
     function validate(e) {
-      e.preventDefault()
-      document.location.href = '../self/self.html'
+      const username = document.forms['form']['username'].value
+      const password = document.forms['form']['userpassword'].value
+      if (!(emailReg.test(username) || phoneReg.test(username) || nameReg.test(username))) return alert('用户名不符合格式,请重新输入')
+
+      for (let i = 0; i < localStorage.length; i++) {
+        let check = JSON.parse(localStorage.getItem(i))
+        if (username == check.username && password == check.password) {
+          e.preventDefault()
+          document.location.href = '../home/index.html'
+          sessionStorage.setItem('login', username)
+          return;
+        }
+      }
+      return alert("用户名和密码输入不正确，请重新输入");
     }
   </script>
 </body>

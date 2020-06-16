@@ -75,8 +75,6 @@
       border-bottom: 1px solid;
       border-radius: 0;
     }
-
-
   </style>
 </head>
 
@@ -93,18 +91,43 @@
     <div data-role="main" id="main">
       <form method="post" action="index.html" class="form" id="form1">
         <input type="text" name="username" placeholder="手机号/邮箱/用户名">
-        <input type="password" name="userpassword" placeholder="密码">
-        <input type="password" name="userpassword" placeholder="确认密码">
+        <input type="password" name="userpassword1" placeholder="密码">
+        <input type="password" name="userpassword2" placeholder="确认密码">
         <input type="submit" value="提交">
       </form>
     </div>
   </div>
   <script>
     var form = document.getElementById('form1')
+    var emailReg = /^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/
+    var phoneReg = /^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(18[0,5-9]))\d{8}$/
+    var nameReg = /^[a-zA-z][A-Za-z0-9]{4,14}$/
+    var pswReg = /^[0-9a-zA-Z]{6,8}$/
     form.addEventListener('submit', validate1, false)
     function validate1(e) {
-      e.preventDefault()
-      document.location.href = './login.html'
+      const username = document.forms['form1']['username'].value
+      const password = document.forms['form1']['userpassword1'].value
+      const password1 = document.forms['form1']['userpassword2'].value
+      if (!(emailReg.test(username) || phoneReg.test(username) || nameReg.test(username))) return alert('用户名不符合格式,请重新输入')
+      if (password != password1 || pswReg.test(password)) {
+        return alert("密码输入不正确，请重新输入");
+      }
+      let check = []
+      for (let i = 0; i < localStorage.length; i++) {
+        let flag = JSON.parse(localStorage.getItem(i)).username
+        console.log(flag)
+        check.push(flag)
+      }
+      console.log(check)
+      if (!check.includes(username)) {
+        const user = JSON.stringify({ username, password })
+        localStorage.setItem(localStorage.length++, user)
+        e.preventDefault()
+        document.location.href = './login.html'
+        return;
+      } else {
+        return alert("此用户名已被注册，请选择其他");
+      }
     }
   </script>
 </body>

@@ -194,7 +194,7 @@
       </div>
       <div class="photo">
         <img src="../../img/mine/头像.png" alt="">
-        <p>妍等等</p>
+        <p id="user">妍等等</p>
         <a href="./personal.html" data-ajax="false"> 个人主页</a>
       </div>
     </div>
@@ -304,7 +304,10 @@
       </nav>
     </div>
   </div>
-
+  <script>
+    var user = document.getElementById('user')
+    user.innerHTML = sessionStorage.getItem('login')
+  </script>
 </body>
 
 </html>
