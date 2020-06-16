@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../../js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="../../../js/jquery-1.11.1/jquery.min.js"></script>
+  <script src="../../../js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <!-- 引入bootstrap 样式文件 -->
+  <link rel="stylesheet" href="../../../js/bootstrap/css/bootstrap.min.css">
+  <!-- 先引入jquery js文件 -->
+  <script src="../../../js/bootstrap/js/bootstrap.min.js"></script>
+  <title>电影院</title>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+    }
+    ul,li{
+      list-style: none;
+    }
+    a{
+      text-decoration: none;
+    }
+    #pageone{
+      height: 100%;
+    }
+    .title{
+      width: 300px !important;
+      text-align: center;
+    }
+    .title p{
+      color: #000 !important;
+      font-weight: normal;
+      font-size: 16px;
+    }
+    .ui-content{
+      margin-top: 20px;
+    }
+    .first{
+      margin-top: 5px;
+      height: 150px;
+    }
+    .first .item{
+      float: left;
+      height: 120px;
+      width: 200px;
+      margin-left: 20px;
+      position: relative;
+    }
+    .first .item h5{
+      line-height: 20px;
+    }
+    .first .item span{
+      position: absolute;
+      bottom: 5%;
+    }
+    .first .item strong{
+      color: #e5683c;
+      font-size: 16px;
+    }
+    .first .item del{
+      color: #888;
+      margin-left: 10px;
+    }
+    .first .item div {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 60px;
+      height: 35px;
+      border-radius: 20px;
+      color: #9a9a9a;
+      text-align: center;
+      line-height: 29px;
+      font-weight: 330;
+    }
+    .first img{
+      float: left;
+      margin-top: 5px;
+
+    }
+    .simple{
+      width: 375px;
+      height: 12px;
+      background-color: #eae9ef;
+      margin-left: -14px;
+      margin-top: -24px;
+    }
+    .second{
+      margin-bottom: 35px;
+    }
+    .second p{
+      line-height: 20px;
+    }
+    .two{
+      margin-left: 186px;
+    }
+    .three{
+      float: right;
+    }
+    .third{
+      height: 80px;
+    }
+    .third>span{
+      font-size: 17px;
+      line-height: 3;
+    }
+    .button{
+      float: right;
+    }
+    .minus{
+      float: left;
+      width: 30px;
+      height: 30px;
+      border-radius: 100%;
+      border: 1px solid #ddd;
+      text-align: center;
+      font-size: 22px;
+      color: #ababab;
+      line-height: 25px;
+      margin-right: 10px;
+      margin-top: 10px;
+    }
+    .add{
+      width: 30px;
+      height: 30px;
+      border-radius: 100%;
+      float: right;
+      font-size: 20px;
+      color: #fff;
+      text-align: center;
+      background-color: #dc5041;
+      line-height: 25px;
+      margin-right: 10px;
+      margin-top: 10px;
+    }
+    .four h4{
+      margin-left: 12px;
+      margin-bottom: 20px;
+    }
+    .four p{
+      color: #989898;
+      margin-left: 12px;
+    }
+    .five span{
+      float: right;
+      font-size: 18px;
+      margin: 5px;
+    }
+    .five span strong{
+      color: #d9573d;
+    }
+  </style>
+</head>
+<body>
+  <div data-role="page" id="pageone" >
+    <div data-role="header" class="header" data-position="fixed" data-tap-toggle="false" style="height: 37px;">  
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <ul class="nav navbar-nav" style="display: flex;">
+            <li><a href="../cinema.html" data-ajax=false>
+              <svg t="1592041706630" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3450" width="26" height="26"><path d="M691.2 906.24a35.84 35.84 0 0 1-25.344-10.24l-358.4-358.4a35.84 35.84 0 0 1 0-50.688l358.4-358.4a35.84 35.84 0 0 1 50.688 50.688L383.488 512l333.056 332.8a35.84 35.84 0 0 1-25.344 61.44z" p-id="3451" fill="#d81e06"></path></svg>
+            </a></li>
+            <li class="title"><p class="navbar-text">确认订单</p></li>
+            <li><a href="">
+            </a></li>
+          </ul>
+        </div>
+        
+      </nav>
+    </div>
+  
+    <div data-role="main" class="ui-content">
+      <div class="first">
+        <img src="../../../img/movie/爆米花.jpg" width="110" height="110" alt="">
+        <div class="item-content item">
+          <h5><strong style="background: #f39d38;color: #fff;font-weight: 300;font-size: 12px;padding: 0px 4px;border-radius: 4px;margin-right: 5px;">单人</strong>单人可乐套餐（爆米花1桶+小可1杯）</h5>
+          <span><strong>24.45元</strong><del>40元</del></span>
+          <div>已售330</div>
+        </div>
+      </div>
+      <div class="simple"></div>
+      <div class="second">
+        <h5>套餐详情</h5>
+        <p><span class="one">爆米花</span><span  class="two">16oz</span><span  class="three">1桶</span></p>
+        <p><span  class="one">可乐</span><span class="two" style="margin-left: 200px;">12oz</span><span class="three">1杯</span></p>
+      </div>
+      <div class="simple"></div>
+      <div class="third">
+        <span>数量</span>
+        <div class="button">
+          <div class="minus">-</div>
+          <span style="float: left;margin-top: 15px;margin-right: 10px;">1</span>
+          <div class="add">+</div>
+        </div>
+      </div>
+      <div class="simple"></div>
+      </div>
+      <div class="four">
+        <h4>提示信息</h4>
+        <p>使用时间：请在影城卖品部营业时间兑换</p>
+      </div>
+      <div class="simple" style="margin-top: 15px;height: 80px;width: 390px;"></div>
+      <div class="five">
+        <span>小计：<strong>24.45元</strong></span>
+        <button style="background-color: #f1a243;color: #fff;font-weight: 300;margin-top: 20px; display: inline-block;">确认支付</button>
+      </div>
+  </div> 
+</body>
+</html>
