@@ -27,16 +27,19 @@
       height: 100%;
     }
     .box-office{
-      width: 320px;
-      background-color: #f6f6f6;
+      width: 340px;
+      background-color: #f3f0f0;
       padding: 5px;
+    }
+    .box-office >span{
+      color: #000 !important;
     }
     .movie-list{
       display: flex;
       flex-wrap: wrap;
     }
     .movie-item{
-      width: 320px;
+      width: 340px;
     }
     .item-img{
       position: relative;
@@ -62,7 +65,7 @@
       margin-top: 4px;
     }
     .item-content p{
-      color: #676767;
+      color: #676767 !important;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
@@ -72,7 +75,7 @@
       background-color: #f09f60;
       border-radius: 20px;
       width: 58px;
-      padding: 6px 0;
+      padding: 2px 0;
       margin: -70px 5px -70px 0;
       font-weight: 300;
       color: #fff;
@@ -81,7 +84,7 @@
     .item-play svg{
       position: absolute;
       left: 13%;
-      top: 24%;
+      top: 24.9%;
     }
     .item-play span{
       display: inline-block;
@@ -103,10 +106,16 @@
     .navbar-brand img{
       width: 24px;
     }
+    .box-office{
+      margin-top: 20px;
+    }
     .cinema p,span{
       color: #969292 !important;
       line-height: 2;
       font-weight: 300;
+    }
+    .item-play span{
+      color: #ffff !important;
     }
     .cinema strong{
       color: rgb(238, 64, 64);
@@ -151,19 +160,27 @@
   <!-- 热映 -->
   <div data-role="page" id="pageone" >
     <div data-role="header" class="header" data-position="fixed" data-tap-toggle="false" style="height: 37px;">  
-      <div data-role="navbar">
-        <ul >
-          <li style="height: 37.5px;">
-            <a href="#">杭州 <span class="caret"></span></a>
-          </li>
-          <li ><a href="#pageone">热映</a></li>
-          <li ><a href="#pagetwo">影院</a></li>
-          <li ><a href="#pagethree">待映</a></li>
-          <li >
-            <a href=""><img src="../../img/component/查询灰.png" alt=""></a>
-          </li>
-        </ul>
-      </div>
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">杭州 <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">江西</a></li>
+                <li><a href="#">北京</a></li>
+                <li><a href="#">深圳</a></li>
+                <li><a href="#">上海</a></li>
+              </ul>
+            </li>
+            <li><a href="./movie.html" data-ajax=false>热映</a></li>
+            <li><a href="./cinema.html" data-ajax=false>影院</a></li>
+            <li><a href="./reflected.html" data-ajax=false>待映</a></li>
+            <li><a href="">
+              <svg t="1591795274330" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709" width="16" height="16"><path d="M433.6 140.6c36.2 0 71.3 7.1 104.4 21.1 31.9 13.5 60.6 32.9 85.3 57.5s44 53.3 57.5 85.3c14 33 21.1 68.2 21.1 104.4s-7.1 71.3-21.1 104.4c-13.5 31.9-32.9 60.6-57.5 85.3-24.6 24.6-53.3 44-85.3 57.5-33 14-68.2 21.1-104.4 21.1s-71.3-7.1-104.4-21.1c-31.9-13.5-60.6-32.9-85.3-57.5-24.6-24.6-44-53.3-57.5-85.3-14-33-21.1-68.2-21.1-104.4s7.1-71.3 21.1-104.4c13.5-31.9 32.9-60.6 57.5-85.3s53.3-44 85.3-57.5c33.1-14 68.2-21.1 104.4-21.1m0-50c-175.7 0-318.2 142.5-318.2 318.2S257.9 727 433.6 727s318.2-142.5 318.2-318.2S609.4 90.6 433.6 90.6zM622.41 657.834l35.355-35.355L846.207 810.92l-35.355 35.355z" fill="#d81e06" p-id="2710"></path></svg>
+            </a></li>
+          </ul>
+        </div><!-- /.container-fluid -->
+      </nav>
     </div>
   
     <div data-role="main" class="ui-content">
@@ -171,12 +188,30 @@
         <div class="box-office">
           <img src="../../img/component/统计图.png" alt="">
           <span>实时票房</span>
-          <span style="float: right;">今日大盘<span style="color: red;">0.0万</span>
+          <span style="float: right;">今日大盘<span style="color: red !important;">0.0万</span>
           <span style="display:inline-block;border-top:1px solid #ccc;border-right: 1px solid #ccc;width: 8px;height: 8px;transform:rotate(45deg)"></span>
           </span>
         </div>
         <div class="movie-list">
           <ul class="movie-list " >
+            <a href="../home/hello_teacher.html" data-ajax="false">
+              <li class="movie-item">
+                <div class="item-img">
+                  <svg t="1591237178772" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4462" width="28" height="28"><path d="M507.456 64C262.528 64 64 262.752 64 507.904c0 245.12 198.528 443.872 443.456 443.872 244.896 0 443.456-198.752 443.456-443.872C950.912 262.752 752.352 64 507.456 64z m0 843.408c-220.432 0-399.136-178.88-399.136-399.504C108.32 287.2 287.04 108.368 507.456 108.368c220.432 0 399.136 178.88 399.136 399.536 0 220.624-178.704 399.504-399.136 399.504z m201.28-430.96C639.76 429.44 514.656 359.072 443.36 315.52c-29.232-18.496-53.776-11.088-56.144 21.504-1.728 87.248 0 255.52 0 344.32 1.44 33.04 30.592 37.408 55.92 24.08L708.16 544.736c-0.496-0.272 54.272-30.464 0.592-68.288z" p-id="4463" fill="#2c2c2c" data-spm-anchor-id="a313x.7781069.0.i8" class="selected"></path></svg>
+                  <img src="../../img/movie/老师好.jpg" alt="" width="72">
+                </div>
+                <div class="item-content">
+                  <h4>老师·好</h4>
+                  <p>猫眼评分&nbsp;<em style="color: #f5d15f;font-size: 14px;">9.3</em></p>
+                  <p>主演：于谦，汤梦佳，王广源</p>
+                  <p>低至4.9元在线看电影</p>
+                  <div class="item-play">
+                    <svg t="1591238303486" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6118" width="14" height="14"><path d="M692.4 487.3L412.9 316.9c-19.3-11.8-44 2.1-44 24.7v340.7c0 22.6 24.7 36.5 44 24.7l279.6-170.3c18.5-11.3 18.5-38.1-0.1-49.4z" fill="#d81e06" p-id="6119"></path><path d="M512 0C229.2 0 0 229.2 0 512s229.2 512 512 512 512-229.2 512-512S794.8 0 512 0z m0 947.2C272 947.2 76.8 752 76.8 512S272 76.8 512 76.8 947.2 272 947.2 512 752 947.2 512 947.2z" fill="#d81e06" p-id="6120"></path><path d="M692.4 487.3L412.9 316.9c-4.8-2.9-10-4.3-15-4.3-15.1 0-29 12-29 29v340.7c0 16.9 13.9 29 29 29 5 0 10.2-1.3 15-4.3l279.6-170.3c18.5-11.3 18.5-38.1-0.1-49.4zM445.7 597.1V426.9L585.4 512l-139.7 85.1z" fill="#d81e06" p-id="6121"></path></svg>
+                    <span>播放</span>
+                  </div>
+                </div>
+              </li>
+            </a>
             <a href="">
               <li class="movie-item">
                 <div class="item-img">
@@ -321,186 +356,6 @@
                 </div>
               </li>
             </a>
-          </ul>
-        </div>
-      </div>
-    </div>
-  
-    <div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
-      <nav class="navbar navbar-default navbar-fixed-bottom">
-        <div class="container">
-          <ul class="nav navbar-nav" >
-            <li>
-              <a class="navbar-brand" href="../home/index.html" data-ajax=false>
-                <img src="../../img/component/首页.png">
-                <p>首页</p>
-              </a>
-            </li>
-            <li>
-              <a class="navbar-brand" href="../movie/movie.html" data-ajax=false>
-                <img src="../../img/component/电影.png">
-                <p>电影</p>
-              </a>
-            </li>
-            <li>
-              <a class="navbar-brand" href="../video/video.html" data-ajax=false>
-                <img src="../../img/component/广汽_五分钟小视频.png">
-                <p>小视频</p>
-              </a>
-            </li>
-            <li>
-              <a class="navbar-brand" href="../perform/perform.html" data-ajax=false>
-                <img src="../../img/component/演出日历.png">
-                <p>演出</p>
-              </a>
-            </li>
-            <li>
-              <a class="navbar-brand" href="../self/self.html" data-ajax=false>
-                <img src="../../img/component/我的.png">
-                <p>我的</p>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-  </div> 
-
-  <!-- 影院 -->
-  <div data-role="page" id="pagetwo" >
-    <div data-role="header" class="header" data-position="fixed" data-tap-toggle="false" style="height: 37px;">  
-      <div data-role="navbar">
-        <ul >
-          <li style="height: 37.5px;">
-            <a href="#">杭州 <span class="caret"></span></a>
-          </li>
-          <li ><a href="#pageone">热映</a></li>
-          <li ><a href="#pagetwo">影院</a></li>
-          <li ><a href="#pagethree">待映</a></li>
-          <li >
-            <a href=""><img src="../../img/component/查询灰.png" alt=""></a>
-          </li>
-        </ul>
-      </div>
-      <div data-role="navbar">
-        <ul>
-        <li ><a href="#anylink">全城</a></li>
-        <li><a href="#anylink">品牌</a></li>
-        <li><a href="#anylink">距离近</a></li>
-        <li><a href="#anylink">筛选</a></li>
-        </ul>
-        </div>
-      <div class="container">
-    </div>
-  
-    <div data-role="main" class="ui-content" style="height: 530px;">
-      <ul data-role="listview">
-        <li class="cinema">
-          <h5>进贤华影城</h5> <span class="price">参考价:<strong>70元</strong>起</span>
-          <p>进贤县滨湖大道199号</p> <span class="distance">1km</span>
-          <i class="blue">退</i><i class="blue">改签</i><i class="orange">小吃</i><i class="orange">折扣卡</i><br>
-          <p><i class="bgc-blue">卡</i>开卡特惠，首单2张最高立减6元</p>
-        </li> 
-        <li class="cinema">
-          <h5>中影恒业国际影城</h5> <span class="price">参考价:暂无</span>
-          <p>进贤县进贤大道与钟陵路交汇处（天虹商场四楼）</p> <span class="distance">46km</span>
-          <i class="blue">退</i><i class="blue">改签</i><i class="orange">小吃</i><i class="orange">折扣卡</i><br>
-          <p><i class="bgc-blue">卡</i>开卡特惠，首单2张最高立减6元</p>
-        </li>
-        <li class="cinema">
-          <h5>潇湘国际影城（天虹酷加店）</h5> <span class="price">参考价：暂无</span>
-          <p>南昌县紫阳大道奥体天虹988号</p> <span class="distance">23km</span>
-          <i class="blue">退</i><i class="blue">改签</i><i class="orange">小吃</i><i class="orange">折扣卡</i><br>
-          <p><i class="bgc-blue">卡</i>开卡特惠，首单2张最高立减6元</p>
-        </li>
-        <li class="cinema">
-          <h5>漫威国际影城（瑶湖奥体店）</h5> <span class="price">参考价：暂无</span>
-          <p>南昌县高新区天祥大道188号紫阳商业广场4楼...</p> <span class="distance">30km</span>
-          <i class="blue">退</i><i class="blue">改签</i><i class="orange">小吃</i><i class="orange">折扣卡</i><br>
-          <!-- <p><i class="bgc-blue">卡</i>开卡特惠，首单2张最高立减6元</p> -->
-        </li>
-        <li class="cinema">
-          <h5>大地影院（新力方广场店）</h5> <span class="price">参考价：暂无</span>
-          <p>南昌县高新区紫阳大道1216号新力都荟广场4F</p> <span class="distance">31km</span>
-          <i class="blue">退</i><i class="blue">改签</i><i class="orange">小吃</i><i class="orange">折扣卡</i><br>
-          <p><i class="bgc-blue">卡</i>开卡特惠，首单1张最高立减10元</p>
-        </li>
-        <li class="cinema">
-          <h5>万达影城（达观店）</h5> <span class="price">参考价：暂无</span>
-          <p>青山湖区北京东路1819号达观国际广场4层</p> <span class="distance">35km</span>
-          <i class="blue">退</i><i class="blue">改签</i><i class="orange">小吃</i><i class="orange">折扣卡</i><br>
-          <!-- <p><i class="bgc-blue">卡</i>开卡特惠，首单2张最高立减6元</p> -->
-        </li>
-      </ul>
-    </div>
-  
-    <div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
-      <nav class="navbar navbar-default navbar-fixed-bottom">
-        <div class="container">
-          <ul class="nav navbar-nav" >
-            <li>
-              <a class="navbar-brand" href="./index.html">
-                <img src="../../img/component/首页.png">
-                <p>首页</p>
-              </a>
-            </li>
-            <li>
-              <a class="navbar-brand" href="./movie.html">
-                <img src="../../img/component/电影.png">
-                <p>电影</p>
-              </a>
-            </li>
-            <li>
-              <a class="navbar-brand" href="./video.html">
-                <img src="../../img/component/广汽_五分钟小视频.png">
-                <p>小视频</p>
-              </a>
-            </li>
-            <li>
-              <a class="navbar-brand" href="./perform.html">
-                <img src="../../img/component/演出日历.png">
-                <p>演出</p>
-              </a>
-            </li>
-            <li>
-              <a class="navbar-brand" href="./self.html">
-                <img src="../../img/component/我的.png">
-                <p>我的</p>
-              </a>
-            </li>
-          </ul>
-          
-        </div>
-      </nav>
-    </div>
-  </div> 
-  
-  <!-- 待映 -->
-  <div data-role="page" id="pagethree" >
-    <div data-role="header" class="header" data-position="fixed" data-tap-toggle="false" style="height: 37px;">  
-      <div data-role="navbar">
-        <ul >
-          <li style="height: 37.5px;">
-            <a href="#">杭州 <span class="caret"></span></a>
-          </li>
-          <li ><a href="#pageone">热映</a></li>
-          <li ><a href="#pagetwo">影院</a></li>
-          <li ><a href="#pagethree">待映</a></li>
-          <li >
-            <a href=""><img src="../../img/component/查询灰.png" alt=""></a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  
-    <div data-role="main" class="ui-content">
-      <div class="container">
-        <div class="content-one">
-          <h3>预告片推荐</h3>
-          <ul class="List">
-            <li>
-              <img src="" alt="">
-            </li>
           </ul>
         </div>
       </div>

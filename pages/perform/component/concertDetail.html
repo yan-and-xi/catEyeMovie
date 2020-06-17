@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../../js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="../../../js/jquery-1.11.1/jquery.min.js"></script>
+  <script src="../../../js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <!-- 引入bootstrap 样式文件 -->
+  <link rel="stylesheet" href="../../../js/bootstrap/css/bootstrap.min.css">
+  <!-- 先引入jquery js文件 -->
+  <script src="../../../js/bootstrap/js/bootstrap.min.js"></script>
+  <title>猫眼电影</title>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+    }
+    ul,li{
+      list-style: none;
+    }
+    a{
+      color: #333 !important;
+    }
+    span{
+      
+    }
+    #pageone{
+      height: 100%;
+    }
+    .header{
+      height: 50px;
+    }
+    .title{
+      text-align: center;
+      margin-top: 13px;
+      font-size: 18px;
+      font-weight: 350;
+    }
+    .title a{
+      float: left;
+    }
+    .title span{
+      line-height: 32px;
+    }
+    .ui-content{
+      /* height: 620px; */
+      /* overflow: hidden; */
+      width: 375px;
+    }
+    .search{
+      position: relative;
+      background-color: #f0f0f0 !important;
+      width: 330px;
+      margin-left: 5px;
+      margin-top: -12px;
+    }
+    .search input::-webkit-input-placeholder{
+      padding-left: 30px;
+    }
+    .searchIcon{
+      position: absolute;
+      left: 3%;
+      top: 30%;
+    }
+    .first{
+      width: 375px;
+      margin-left: -14px;
+      margin-top: 10px;
+    }
+    .navTitle{
+      display: flex;
+      overflow-y: auto;
+      width: 375px;
+    }
+    .navTitle li a{
+      /* flex: 1; */
+      width: 80px;
+      text-align: center;
+      font-weight: 350;
+      font-size: 12px;
+    }
+    .first{
+      background-color: #242543;
+      color: #fff;
+      margin-top: -10px;
+      font-weight: normal;
+      opacity: .9;
+      position: relative;
+      height: 380px;
+    }
+    .first>img{
+      border-radius: 4px;
+      padding: 26px;
+      float: left;
+    }
+    .first h4{
+      font-weight: 350;
+      line-height: 5;
+    }
+    .first>p{
+      line-height: 10;
+    }
+    .first-content{
+      background-color: #202140;
+      margin-left: 23px;
+      width: 280px;
+      padding: 8px 0;
+      border-radius: 10px;
+      line-height: 20px;
+      margin-top: -45px;
+      margin-bottom: 5px;
+    }
+    .first-content p {
+      margin-left: 15px;
+      font-weight: 300;
+    }
+    .where{
+      position: absolute;
+      right: 10%;
+      top: 60%;
+    }
+    .official-ticket{
+      display: inline-block;
+      position: relative;
+      width: 80px;
+      color: #b29e97;
+      font-weight: 300;
+      font-size: 12px;
+      font-family: sans-serif;
+      margin: 10px 10px 10px 40px;
+      text-align: center;
+    }
+    .official-ticket .icon {
+      position: absolute;
+      left: 0;
+      top: 8%;
+    }
+    .collect-tickets{
+      display: inline-block;
+      position: relative;
+      width: 90px;
+      color: #b29e97;
+      font-weight: 300;
+      font-size: 12px;
+      font-family: sans-serif;
+      margin: 10px 10px 10px 20px; 
+      text-align: center;
+    }
+    .collect-tickets .icon {
+      position: absolute;
+      left: 0;
+      top: 8%;
+    }
+    .collect{
+      position: relative;
+      float: left;
+      width: 160px;
+      height: 35px;
+      border-radius: 4px;
+      background-color: #2d2a45;
+      opacity: .8;
+      text-align: center;
+      line-height: 35px;
+      margin-left: 23px;
+    }
+    .collect .icon{
+      position: absolute;
+      left: 27%;
+      top: 29%;
+    }
+    .share{
+      position: relative;
+      float: right;
+      width: 160px;
+      height: 35px;
+      border-radius: 4px;
+      background-color: #2d2a45;
+      opacity: .8;
+      text-align: center;
+      line-height: 35px;
+      margin-right: 17px;
+    }
+    .share .icon{
+      position: absolute;
+      left: 27%;
+      top: 29%;
+    }
+  </style>
+</head>
+<body>
+  <div data-role="page" id="pageone" >
+    <div data-role="header" class="header" data-position="fixed" data-tap-toggle="false">
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container title">
+          <a href="../perform.html" data-ajax=false>
+            <svg t="1592041706630" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3450" width="26" height="26"><path d="M691.2 906.24a35.84 35.84 0 0 1-25.344-10.24l-358.4-358.4a35.84 35.84 0 0 1 0-50.688l358.4-358.4a35.84 35.84 0 0 1 50.688 50.688L383.488 512l333.056 332.8a35.84 35.84 0 0 1-25.344 61.44z" p-id="3451" fill="#d81e06"></path></svg>
+          </a>
+          <span>猫眼演出详情</span>
+          <a href="" style="float: right;">
+            <svg t="1592285530918" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10164" width="32" height="32"><path d="M789.333333 490.666667c-12.8 0-21.333333 8.533333-21.333333 21.333333v279.466667c0 10.666667-8.533333 19.2-19.2 19.2H253.866667c-10.666667 0-19.2-8.533333-19.2-19.2V275.2c0-10.666667 8.533333-19.2 19.2-19.2H512c12.8 0 21.333333-8.533333 21.333333-21.333333s-8.533333-21.333333-21.333333-21.333334H253.866667C219.733333 213.333333 192 241.066667 192 275.2V789.333333c0 34.133333 27.733333 61.866667 61.866667 61.866667H746.666667c34.133333 0 61.866667-27.733333 61.866666-61.866667V512c2.133333-12.8-6.4-21.333333-19.2-21.333333z" p-id="10165" fill="#d8513e"></path><path d="M853.333333 192c0-2.133333 0-4.266667-2.133333-8.533333 0-2.133333-2.133333-2.133333-2.133333-2.133334-2.133333-4.266667-6.4-6.4-8.533334-8.533333-2.133333-2.133333-6.4-2.133333-8.533333-2.133333h-170.666667c-12.8 0-21.333333 8.533333-21.333333 21.333333s8.533333 21.333333 21.333333 21.333333h119.466667L394.666667 599.466667c-8.533333 8.533333-8.533333 21.333333 0 29.866666 8.533333 8.533333 21.333333 8.533333 29.866666 0L810.666667 243.2V362.666667c0 12.8 8.533333 21.333333 21.333333 21.333333s21.333333-8.533333 21.333333-21.333333V192z" p-id="10166" fill="#d8513e"></path></svg>
+          </a>
+        </div>
+      </nav>
+    </div>
+  
+    <div data-role="main" class="ui-content">
+      <div class="first">
+        <img src="../../../img/perform/新中原.jpg" width="44%" style="border-radius: 20px;" alt="">
+        <h4>新中原大剧院演出门票</h4>
+        <p>120元</p>
+        <div class="first-content">
+          <p>2020.05.30 - 2020.08.31</p>
+          <p>南昌 新中原大剧院</p>
+        </div>
+        <svg t="1592285837895" class="icon where" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="11142" width="20" height="20"><path d="M930.909091 418.909091c0-232.727273-186.181818-418.909091-418.909091-418.909091S93.090909 186.181818 93.090909 418.909091c0 172.218182 228.072727 428.218182 335.127273 539.927273H302.545455V1024h418.90909v-65.163636h-130.327272C702.836364 847.127273 930.909091 591.127273 930.909091 418.909091zM167.563636 418.909091c0-190.836364 153.6-344.436364 344.436364-344.436364 190.836364 0 344.436364 153.6 344.436364 344.436364 0 148.945455-228.072727 386.327273-344.436364 512-116.363636-125.672727-344.436364-363.054545-344.436364-512z" fill="#707070" p-id="11143"></path><path d="M516.654545 200.145455c-102.4 0-186.181818 83.781818-186.181818 186.181818s83.781818 186.181818 186.181818 186.181818 186.181818-83.781818 186.181819-186.181818-83.781818-186.181818-186.181819-186.181818z m0 297.890909c-60.509091 0-111.709091-51.2-111.70909-111.709091s51.2-111.709091 111.70909-111.709091c60.509091 0 111.709091 51.2 111.709091 111.709091s-51.2 111.709091-111.709091 111.709091z" fill="#707070" p-id="11144"></path></svg>
+        <span class="official-ticket">
+          <svg t="1592285992802" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15128" width="16" height="16"><path d="M513.6 557.4c-5.4 0-9.9 3.8-9.9 11s4.5 11 9.9 11 9.9-3.8 9.9-11-4.5-11-9.9-11z" fill="#ad998e" p-id="15129"></path><path d="M935.1 367.6L742.5 174.9c-8-8-18.8-12.5-30.1-12.5H311.6c-11.3 0-22.1 4.5-30.1 12.5L88.9 367.6c-27.7 27.7-27.7 72.6 0 100.3l372.9 372.9c27.7 27.7 72.6 27.7 100.3 0L935 467.9c27.8-27.8 27.8-72.7 0.1-100.3zM536.5 596.4L518 634.6h-24.4l19.1-37.8c-1.9 0.7-3.9 0.7-5.4 0.7-11.8 0-25.7-10-25.7-29.1 0-20.4 14.8-31 32.1-31s32.1 10.6 32.1 31c-0.1 9.8-4.9 18.9-9.3 28z m-187.3 47.4v-340h-32.1v-44.6h85.6v215.4l205.9-220h98.2L349.2 643.8z" fill="#ad998e" p-id="15130"></path></svg>
+          官方票
+        </span>
+        <span class="collect-tickets">
+          <svg t="1592285943219" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="12757" width="16" height="16"><path d="M845.7 395.4L743 311.5v-68.1h-82.2l-149-121.7-141.7 121.8H283v67.1l-102.7 84.9v417.3h665.4V395.4z m-57.6 27.4v1.5L743 459.9V386l45.1 36.8zM512.8 196.9l57 46.6H458.5l54.3-46.6z m172.6 104.2v204.4L513 641.8 340.6 505.5V301.1h344.8zM283 385.4v74.5l-45.1-35.7v-1.6l45.1-37.2z m-45.1 369.9V497.7L513 715.3l275.1-217.6v257.6H237.9z" p-id="12758" fill="#ad998e"></path><path d="M393 345.3h235.3v56.5H393zM393 443.2h235.3v56.5H393z" p-id="12759" fill="#ad998e"></path></svg>
+          现场取票
+        </span>
+        <div class="collect">
+          <svg t="1592289393875" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="18178" width="16" height="16"><path d="M707.584 93.184c-77.312 0-148.992 38.912-196.608 102.912-47.104-64-119.296-102.912-196.608-102.912-139.264 0-252.416 123.904-252.416 275.968 0 90.624 40.448 154.624 73.216 205.824C229.888 723.968 468.48 908.8 478.72 916.48c9.728 7.68 20.992 11.264 32.256 11.264s22.528-3.584 32.256-11.264c10.24-7.68 248.32-193.024 343.552-341.504 32.768-51.2 73.216-115.2 73.216-205.824 0-152.064-113.152-275.968-252.416-275.968zM821.76 573.44c-87.552 122.88-272.896 263.168-282.112 269.824-8.704 6.656-18.944 10.24-28.672 10.24-10.24 0-19.968-3.072-28.672-10.24-9.216-6.656-190.976-148.48-282.112-274.944-29.184-46.08-75.776-103.424-75.776-184.32 0-136.192 75.776-231.936 200.192-231.936 69.12 0 144.384 66.048 186.368 123.392 42.496-57.344 117.248-123.392 186.368-123.392 124.928 0 205.824 95.744 205.824 231.936 0 80.896-51.712 143.872-81.408 189.44z" fill="#ffffff" p-id="18179" data-spm-anchor-id="a313x.7781069.0.i41" class="selected"></path></svg>
+          收藏
+        </div>
+        <div class="share">
+          <svg t="1592286097071" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="17274" width="16" height="16"><path d="M725.333333 341.333333c-25.6 0-46.933333-8.533333-59.733333-25.6l-204.8 119.466667c8.533333 17.066667 12.8 34.133333 12.8 55.466667 0 17.066667-4.266667 38.4-8.533333 51.2l162.133333 89.6c21.333333-21.333333 46.933333-38.4 81.066667-38.4 59.733333 0 106.666667 46.933333 106.666666 106.666666S763.733333 810.666667 704 810.666667 597.333333 763.733333 597.333333 704c0-12.8 0-21.333333 4.266667-34.133333l-162.133333-89.6c-29.866667 38.4-72.533333 59.733333-119.466667 59.733333C238.933333 640 170.666667 571.733333 170.666667 490.666667S238.933333 341.333333 320 341.333333c46.933333 0 89.6 21.333333 115.2 55.466667L640 277.333333V256c0-46.933333 38.4-85.333333 85.333333-85.333333s85.333333 38.4 85.333334 85.333333-38.4 85.333333-85.333334 85.333333z m-68.266666 320l-8.533334 8.533334-4.266666 12.8c0 4.266667-4.266667 12.8-4.266667 21.333333 0 34.133333 29.866667 64 64 64s64-29.866667 64-64-29.866667-64-64-64c-17.066667 0-38.4 8.533333-46.933333 21.333333z m-238.933334-209.066666l-4.266666-12.8-8.533334-12.8c-21.333333-25.6-51.2-42.666667-85.333333-42.666667C260.266667 384 213.333333 430.933333 213.333333 490.666667S260.266667 597.333333 320 597.333333c34.133333 0 64-17.066667 85.333333-42.666666l8.533334-12.8 4.266666-12.8c4.266667-12.8 8.533333-25.6 8.533334-38.4 0-12.8-4.266667-25.6-8.533334-38.4zM682.666667 268.8l4.266666 8.533333 8.533334 8.533334c8.533333 8.533333 17.066667 12.8 29.866666 12.8 25.6 0 42.666667-17.066667 42.666667-42.666667s-17.066667-42.666667-42.666667-42.666667-42.666667 17.066667-42.666666 42.666667v12.8z" p-id="17275" fill="#cdcdcd"></path></svg>
+          分享
+        </div>
+      </div>
+      <div class="second">
+        <h5>限时优惠</h5>
+        <p><span>折扣</span>8.3折 原价120元，仅100元</p>
+        <h5>演出详情</h5>
+        <p>
+          <strong style="color:rgb(230,0,0)">
+            下单购买成功后，请第一时间联系商家安排座位，预约电话：0791-86403353。法定节假日需要补门票差价，请周知。
+          </strong>
+        </p>
+        <p><span style="color: rgb(0, 0, 0);">新中原大剧院，十四年品质坚持，艺术阵容，缔造高品质文化娱乐生活享受，秉承“传承文明，怡情益智”的企业精神，力邀众多国内一线演艺精英加盟，以大型舞蹈秀，经典小品，舞台音乐剧为节目主体，全年365天不间断的精彩演出，优质的专业团队，全国新的专业设施，打造江西乃至全国娱乐航母。</span></p>
+        <p>&nbsp;<img src="https://p1.meituan.net/myvideodistribute/de5b57dc874bc813517cf72623c84d252514609.jpg" width="350px"></p>
+        <p><img src="https://p0.meituan.net/myvideodistribute/21262366b966e0ba4c99ca32fa85c6853565568.jpg" width="350px"><img src="https://p1.meituan.net/myvideodistribute/82d3bdb1d121df5cfc38757a307ae64d6395904.jpg" width="350px"></p>
+        <p><img src="https://p1.meituan.net/myvideodistribute/1ef11d4a9cf136eee09868cb373d72de6049792.jpg" width="350px"></p>
+        <p><span style="color: rgb(0, 0, 0);">&nbsp;新中原大剧院每年吸引各地观众群体近百万人，评为江西文化产业示范基地，作为江西对外文化展示的窗口，每晚21：08准时与您相约，打造城市新贵娱乐新天地。中原大剧院，十四年品质坚持，艺术阵容，缔造高品质文化娱乐生活享受，秉承“传承文明，怡情益智”的企业精神，力邀众多国内一线演艺精英加盟，以大型舞蹈秀，经典小品，舞台音乐剧为节目主体，全年365天不间断的精彩演出，优质的专业团队，全国新的专业设施，打造江西乃至全国娱乐航母。新中原大剧院每年吸引各地观众群体近百万人，评为江西文化产业示范基地，作为江西对外文化展示的窗口，每晚21：08准时与您相约，打造城市新贵娱乐新天地。</span></p>
+        <p><img src="https://p1.meituan.net/myvideodistribute/4c737b1938f4e8aac443ef01b2f3ac2c297040.jpg" width="350px"></p>
+        <p><img src="https://p0.meituan.net/myvideodistribute/04ef7daaad935c11dffbfcd208d6c917394263.jpg" width="350px"></p>
+        <p><img src="https://p0.meituan.net/myvideodistribute/34f3d53989d38f8f91a12b92599a97b4373349.jpg" width="350px"></p>
+        <p><img src="https://p0.meituan.net/myvideodistribute/34f3d53989d38f8f91a12b92599a97b4373349.jpg" width="350px"></p>
+        <p><img src="https://p1.meituan.net/myvideodistribute/d33f5700cb1fe03ae077b1df764f33f44372480.jpg" width="350px"></p>
+      </div>
+    </div>
+  </div> 
+  
+</body>
+</html>
