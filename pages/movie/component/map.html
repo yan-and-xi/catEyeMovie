@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../../js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="../../../js/jquery-1.11.1/jquery.min.js"></script>
+  <script src="../../../js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <!-- 引入bootstrap 样式文件 -->
+  <link rel="stylesheet" href="../../../js/bootstrap/css/bootstrap.min.css">
+  <!-- 先引入jquery js文件 -->
+  <script src="../../../js/bootstrap/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=mZI4XmzTUEBhFqvWawlp2hgL"></script>
+	<script src="http://lbsyun.baidu.com/index.php?title=webapi/direction-api-v2"></script>
+  <title>电影院</title>
+  <style>
+    #pagesix #content {
+			height: 600px;
+		}
+    .searchInput {
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <div data-role="page" id="pagesix">
+		<!-- <div data-role="header" id="header"> -->
+			<!-- <p><input type='button' value='查询' onclick="run()" /></p>  -->
+    <!-- </div> -->
+    <div data-role="header" class="header" data-position="fixed" data-tap-toggle="false" style="height: 37px;">  
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <ul class="nav navbar-nav" style="display: flex;">
+            <li><a href="./cinemaItem.html" data-ajax=false>
+              <svg t="1592041706630" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3450" width="26" height="26"><path d="M691.2 906.24a35.84 35.84 0 0 1-25.344-10.24l-358.4-358.4a35.84 35.84 0 0 1 0-50.688l358.4-358.4a35.84 35.84 0 0 1 50.688 50.688L383.488 512l333.056 332.8a35.84 35.84 0 0 1-25.344 61.44z" p-id="3451" fill="#d81e06"></path></svg>
+            </a></li>
+            <li class="title" style="margin-left: 50px;font-size: 15px;"><p class="navbar-text">进贤县滨湖大道199号</p></li>
+          </ul>
+        </div>
+        
+      </nav>
+    </div>
+    <div class="searchInput">
+      起点位置：<input class="txt" type="text" id="startInput"  />
+			终点位置：<input class="txt" type="text"  id="endInput" value="进贤华影城" />
+			<input type="button" value="步行" id="walkingSearch" /><input type="button" value="驾车" id="drivingSearch" /><input type="button" value="公交" id="transitSearch" />
+    </div>
+		<div data-role="content" id="content">
+		</div>
+		<div id="r-result"></div>
+	</div>
+</body>
+<script type="text/javascript">
+  var sContent ="天安门坐落在中国北京市中心,故宫的南侧,与天安门广场隔长安街相望,是清朝皇城的大门...";
+  var map = new BMap.Map("content");
+  var walkingSearch = document.getElementById("walkingSearch");
+  var drivingSearch = document.getElementById("drivingSearch");
+  var transitSearch = document.getElementById("transitSearch");
+  var start = document.getElementById("startInput");
+  var end = document.getElementById("endInput");
+  map.centerAndZoom(new BMap.Point(116.263903,28.389038), 17);
+  map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+  map.addControl(new BMap.NavigationControl());               // 添加平移缩放控件
+  map.addControl(new BMap.ScaleControl());                    // 添加比例尺控件
+  map.addControl(new BMap.OverviewMapControl()); //添加缩略地图控件
+
+  // var infoWindow = new BMap.InfoWindow(sContent);  // 创建信息窗口对象
+  //   map.openInfoWindow(infoWindow,(116.263903,28.389038)); //开启信息窗口
+  //       map.enableScrollWheelZoom();//启动鼠标滚轮缩放地图
+  //   document.getElementById("r-result").innerHTML = "信息窗口的内容是：<br />" + infoWindow.getContent();
+
+  // 步行
+  walkingSearch.onclick = function () {
+    var walking = new BMap.WalkingRoute(map, {
+      renderOptions: {
+        map: map,
+        panel: "r-result",
+        autoViewport: true
+      }
+    });
+    walking.search(start.value, end.value);
+  }
+
+  // 驾车
+  drivingSearch.onclick = function () {
+    var driving = new BMap.DrivingRoute(map, {
+      renderOptions: {
+        map: map,
+        panel: "r-result",
+        autoViewport: true
+      }
+    });
+    driving.search(start.value, end.value);
+  }
+
+  // 公交
+  transitSearch.onclick = function () {
+    var transit = new BMap.TransitRoute(map, {
+      renderOptions: {
+        map: map,
+        panel: "r-result",
+        autoViewport: true
+      }
+    });
+    transit.search(start.value, end.value);
+  }
+
+</script>
+</html>

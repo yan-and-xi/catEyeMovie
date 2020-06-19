@@ -73,7 +73,7 @@
       color: #fff;
       background-color: #585864;
       font-weight: 300;
-      line-height: 30px;
+      line-height: 31px;
       text-align: center;
       float: right;
       margin-top: 50px;
@@ -122,8 +122,8 @@
       <div class="first">
         <img src="../../../img/perform/火箭少女.jpeg"  alt="">
         <span style="color: #fff;">火箭少女101</span>
-        <div>+ 关注</div>
-        <p class="pop">
+        <div id="attention" onclick="change()">+ 关注</div>
+        <p class="pop" >
           点击关注，不错过TA最新的演出消息哦～
         </p>
       </div>
@@ -133,6 +133,21 @@
       </div>
     </div>
   </div> 
-  
+  <script>
+    var flag = true
+    function change() {
+      if(flag) {
+        $('#attention').html("取消关注")
+        $('#attention').css('background','#ec7032')
+        flag=!flag
+      }
+      else{
+        $('#attention').html("+ 关注")
+        $('#attention').css('background','#585864')
+        flag=!flag
+      }
+
+    }
+  </script>
 </body>
 </html>
